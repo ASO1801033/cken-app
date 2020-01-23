@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
-<head>
+<head><!-- headタグの中身 -->
     @yield('head')
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -70,15 +70,9 @@
             {{ Auth::user()->name }}
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-            @if(Auth::user()->flg == 0)
-              <a class="nav-link text-dark" href="http://127.0.0.1:8000/cken/mypage">
-              <i class="fa fa-file-text-o" aria-hidden="true"></i> マイページ
-              <span class="sr-only">(current)</span></a>
-            @else
-              <a class="nav-link text-dark" href="http://127.0.0.1:8000/cken/mypage">
-              <i class="fa fa-file-text-o" aria-hidden="true"></i> マイページ
-              <span class="sr-only">(current)</span></a>
-            @endif
+            <a class="nav-link text-dark" href="http://127.0.0.1:8000/cken/mypage">
+            <i class="fa fa-file-text-o" aria-hidden="true"></i> マイページ
+            <span class="sr-only">(current)</span></a>
 
             <a href="{{ route('logout') }}"
               onclick="event.preventDefault();
@@ -128,6 +122,33 @@
 
     </nav>
     <!--/.Navbar-->
+  </div>
+  <div><!-- Script -->
+    @yield('script')
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
+    <!-- ハンバーガーメニュー -->
+    <script>
+    $(document).ready(function () {
+      $('.first-button').on('click', function () {
+        $('.animated-icon1').toggleClass('open');
+      });
+      $('.second-button').on('click', function () {
+        $('.animated-icon2').toggleClass('open');
+      });
+      $('.third-button').on('click', function () {
+        $('.animated-icon3').toggleClass('open');
+      });
+    });
+    </script>
+    <!--/. SCRIPTS -->
   </div>
 </body>
 </html>
