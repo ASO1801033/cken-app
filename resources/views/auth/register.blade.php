@@ -11,10 +11,72 @@
 
     <!-- Start your project here-->
 
-    <!-- ナビゲーションバー -->
-    @section('logout-nav')
-    @endsection
-    <!--/. ナビゲーションバー -->
+    <!--Navbar-->
+    <nav class="navbar lighten-1 mb-4 fixed-top" style="background-color: #afeeee;">
+
+      <!-- Navbar brand -->
+      <a class="navbar-brand" href="/"><img src="{{ asset('img/logo.png') }}" width=111px height=39px></a>
+
+      <!-- ログインしている時はログイン者名を表示 -->
+      @guest
+      @else
+        <div class="dropdown float-right">
+          <a class="dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ Auth::user()->name }}
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+            <a class="nav-link text-dark" href="http://127.0.0.1:8000/cken/mypage">
+            <i class="fa fa-file-text-o" aria-hidden="true"></i> マイページ
+            <span class="sr-only">(current)</span></a>
+
+            <a href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();" class="text-right">
+              <i class="fa fa-sign-out" aria-hidden="true"></i> ログアウト
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              {{ csrf_field() }}
+            </form>
+          </div>
+        </div>
+      @endguest
+      <!--/. ログイン者名表示 -->
+
+      @auth <!-- ログインしている時はナビゲーションバーの中身を非表示 -->
+
+      <!-- ログインしていない時はナビゲーションバーの中身を表示 -->
+      @else
+      <!-- Collapse button -->
+      <button class="navbar-toggler second-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent23"
+        aria-controls="navbarSupportedContent23" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="animated-icon2"><span></span><span></span><span></span><span></span></div>
+      </button>
+
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent23">
+
+        <!-- Links -->
+        <ul class="navbar-nav"><!-- バーガーメニューを開いたときは左揃え(デフォルト) -->
+          <li class="nav-item active">
+            <a class="nav-link text-dark" href="http://127.0.0.1:8000/login">
+            <i class="fa fa-sign-in" aria-hidden="true"></i> ログイン
+            <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link text-dark" href="http://127.0.0.1:8000/register">
+            <i class="fa fa-user-plus" aria-hidden="true"></i> 新規登録
+            <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <!-- Links -->
+
+      </div>
+      <!-- Collapsible content -->
+      @endauth
+      <!--/. ナビゲーションバーの中身を表示 -->
+
+    </nav>
+    <!--/.Navbar-->
 
     <!-- コンテンツ(スクロールするとヘッダーの下に動く) -->
     <div class="container-fluid main">

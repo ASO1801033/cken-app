@@ -11,10 +11,35 @@
 
     <!-- Start your project here-->
 
-    <!-- ナビゲーションバー -->
-    @section('logincom-nav')
-    @endsection
-    <!--/. ナビゲーションバー -->
+    <!--Navbar-->
+    <nav class="navbar lighten-1 mb-4 fixed-top" style="background-color: #afeeee;">
+
+      <!-- Navbar brand -->
+      <a class="navbar-brand" href="/"><img src="{{ asset('img/logo.png') }}" width=111px height=39px></a>
+
+      <!-- ログインしている時はログイン者名を表示 -->
+      @guest
+      @else
+        <div class="dropdown float-right">
+          <a class="dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ Auth::user()->name }}
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+            <a href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();" class="text-right">
+              <i class="fa fa-sign-out" aria-hidden="true"></i> ログアウト
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              {{ csrf_field() }}
+            </form>
+          </div>
+        </div>
+      @endguest
+      <!--/. ログイン者名表示 -->
+
+    </nav>
+    <!--/.Navbar-->
 
     <!-- コンテンツ(スクロールするとヘッダーの下に動く) -->
     <div class="container-fluid main marginB">
