@@ -116,65 +116,65 @@
       </footer>
       <!--/. Footer -->
     @elseif(Auth::user()->flg == 0)
-      <!-- Footer -->
-      <footer class="page-footer font-small fixed-bottom">
+    <!-- Footer -->
+    <footer class="page-footer font-small fixed-bottom">
 
-        <!-- Copyright -->
-        <div class="footer-copyright text-center" style="background-color: #afeeee;">
-          <div class="row mt-1">
-            <div class="col-4">
-              <a href="http://127.0.0.1:8000/">
-                <i class="fa fa-home fa-2x text-dark" aria-hidden="true"></i><br>
-                <b class="text-dark">トップ</b>
-              </a>
-            </div>
-            <div class="col-4">
-              <a href="http://127.0.0.1:8000/cken/mypage">
-                <i class="fa fa-shopping-cart fa-2x text-dark" aria-hidden="true"></i><br>
-                <b class="text-dark">お店</b>
-              </a>
-            </div>
-            <div class="col-4">
-              <a href="http://127.0.0.1:8000/cken/mypage/coupon">
-                <i class="fa fa-money fa-2x text-dark" aria-hidden="true"></i><br>
-                <b class="text-dark">クーポン</b>
-              </a>
-            </div>
+      <!-- Copyright -->
+      <div class="footer-copyright text-center" style="background-color: #afeeee;">
+        <div class="row mt-1">
+          <div class="col-4">
+            <a href="http://127.0.0.1:8000/">
+              <i class="fa fa-home fa-2x text-dark" aria-hidden="true"></i><br>
+              <b class="text-dark">トップ</b>
+            </a>
+          </div>
+          <div class="col-4">
+            <a href="http://127.0.0.1:8000/cken/mypage">
+              <i class="fa fa-shopping-cart fa-2x text-dark" aria-hidden="true"></i><br>
+              <b class="text-dark">お店</b>
+            </a>
+          </div>
+          <div class="col-4">
+            <a href="http://127.0.0.1:8000/cken/mypage/coupon">
+              <i class="fa fa-money fa-2x text-dark" aria-hidden="true"></i><br>
+              <b class="text-dark">クーポン</b>
+            </a>
           </div>
         </div>
-        <!--/. Copyright -->
-      </footer>
-      <!--/. Footer -->
+      </div>
+      <!--/. Copyright -->
+    </footer>
+    <!--/. Footer -->
     @else
-      <!-- Footer -->
-      <footer class="page-footer font-small fixed-bottom">
+    <!-- Footer -->
+    <footer class="page-footer font-small fixed-bottom">
 
-        <!-- Copyright -->
-        <div class="footer-copyright text-center" style="background-color: #afeeee;">
-          <div class="row mt-1">
-            <div class="col-4">
-              <a href="http://127.0.0.1:8000/">
-                <i class="fa fa-home fa-2x text-dark" aria-hidden="true"></i><br>
-                <b class="text-dark">トップ</b>
-              </a>
-            </div>
-            <div class="col-4">
-              <a href="http://127.0.0.1:8000/cken/mypage">
-                <i class="fa fa-plus fa-2x text-dark" aria-hidden="true"></i><br>
-                <b class="text-dark">お知らせ/クーポン</b>
-              </a>
-            </div>
-            <div class="col-4">
-              <a href="http://127.0.0.1:8000/cken/mypage/edit">
-                <i class="fa fa-pencil-square-o fa-2x text-dark" aria-hidden="true"></i><br>
-                <b class="text-dark">投稿管理/修正</b>
-              </a>
-            </div>
+      <!-- Copyright -->
+      <div class="footer-copyright text-center" style="background-color: #afeeee;">
+        <div class="row mt-1">
+          <div class="col-4">
+            <a href="http://127.0.0.1:8000/">
+              <i class="fa fa-home fa-2x text-dark" aria-hidden="true"></i><br>
+              <b class="text-dark">トップ</b>
+            </a>
+          </div>
+          <div class="col-4">
+            <a href="http://127.0.0.1:8000/cken/mypage">
+              <i class="fa fa-plus fa-2x text-dark" aria-hidden="true"></i><br>
+              <b class="text-dark">お知らせ/クーポン</b>
+            </a>
+          </div>
+          <div class="col-4">
+            <a href="http://127.0.0.1:8000/cken/mypage/edit">
+              <i class="fa fa-pencil-square-o fa-2x text-dark" aria-hidden="true"></i><br>
+              <b class="text-dark">投稿管理/修正</b>
+            </a>
           </div>
         </div>
-        <!--/. Copyright -->
-      </footer>
-      <!--/. Footer -->
+      </div>
+      <!--/. Copyright -->
+    </footer>
+    <!--/. Footer -->
     @endguest
 
     <!-- Script -->
