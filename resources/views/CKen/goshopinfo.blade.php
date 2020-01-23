@@ -203,6 +203,10 @@
     </footer>
     <!--/. Footer -->
 
+    <!-- Script -->
+    @section('script')
+    <!--/. Script -->
+
   </body>
 
 </html>
