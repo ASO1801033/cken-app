@@ -1,60 +1,20 @@
 <!DOCTYPE html>
+@extends('layouts.app')
 <html lang="en">
 
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
-    <link href="css/style.css" rel="stylesheet">
-    <!-- アイコンのCDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-    <title>CKén-お店詳細</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css">
-    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+    @section('head')
+    @section('title', 'CKén-お店詳細')
   </head>
 
   <body>
 
     <!-- Start your project here-->
 
-    <!--Navbar-->
-    <nav class="navbar lighten-1 mb-4 fixed-top" style="background-color: #afeeee;">
-
-      <!-- Navbar brand -->
-      <a class="navbar-brand" href="/"><img src="{{ asset('img/logo.png') }}" width=111px height=39px></a>
-
-      <!-- ログインしている時はログイン者名を表示 -->
-      @guest
-      @else
-        <div class="dropdown float-right">
-          <a class="dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {{ Auth::user()->name }}
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-            <a href="{{ route('logout') }}"
-              onclick="event.preventDefault();
-              document.getElementById('logout-form').submit();" class="text-right">
-              <i class="fa fa-sign-out" aria-hidden="true"></i> ログアウト
-            </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-              {{ csrf_field() }}
-            </form>
-          </div>
-        </div>
-      @endguest
-      <!--/. ログイン者名表示 -->
-
-    </nav>
-    <!--/.Navbar-->
+    <!-- ナビゲーションバー -->
+    @section('logincom-nav')
+    @endsection
+    <!--/. ナビゲーションバー -->
 
     <!-- コンテンツ(スクロールするとヘッダーの下に動く) -->
     <div class="container-fluid main marginB">
