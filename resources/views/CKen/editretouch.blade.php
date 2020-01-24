@@ -72,7 +72,7 @@
             <!--/. キャッチコピー -->
 
             <!-- Default form subscription -->
-            <form class="text-center p-3" action="http://127.0.0.1:8000/cken/mypage/editretouch/{{$editdata->id}}/update" method="post">
+            <form class="text-center p-3" action="{{ route('editupdate', $editdata->id) }}" method="post">
               {{ csrf_field() }}
 
               <div class="mb-3">
@@ -92,7 +92,7 @@
               </div>
 
               <div class="mb-3">
-                <a href="http://127.0.0.1:8000/cken/mypage/edit">
+                <a href="{{ route('edit') }}">
                   <button type="button" class="btn btn-success text-dark">戻る</button>
                 </a>
                 <button type="submit" class="btn btn-info text-dark">実行する</button>
@@ -130,7 +130,7 @@
       <div class="footer-copyright text-center" style="background-color: #afeeee;">
         <div class="row mt-1">
           <div class="col-4">
-            <a href="http://127.0.0.1:8000/">
+            <a href="{{ route('index') }}">
               <i class="fa fa-home fa-2x text-dark" aria-hidden="true"></i><br>
               <b class="text-dark">トップ</b>
             </a>
@@ -142,7 +142,7 @@
             </a>
           </div>
           <div class="col-4">
-            <a href="http://127.0.0.1:8000/cken/mypage/edit">
+            <a href="{{ route('edit') }}">
               <i class="fa fa-pencil-square-o fa-2x text-dark" aria-hidden="true"></i><br>
               <b class="text-dark">投稿管理/修正</b>
             </a>

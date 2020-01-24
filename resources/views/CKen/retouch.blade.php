@@ -65,7 +65,7 @@
             </p>
             <!--/. キャッチコピー -->
 
-            <form action="http://127.0.0.1:8000/cken/mypage/retouch/{{$goshops->id}}/update" method="post">
+            <form action="{{ route('update', $goshops->id) }}" method="post">
               {{ csrf_field() }}
 
               <div class="mb-3">
@@ -147,7 +147,7 @@
 
     </div>
     <!--/. コンテンツ -->
-    
+
     <!-- Footer -->
     <footer class="page-footer font-small fixed-bottom">
 
@@ -155,7 +155,7 @@
       <div class="footer-copyright text-center" style="background-color: #afeeee;">
         <div class="row mt-1">
           <div class="col-4">
-            <a href="http://127.0.0.1:8000/">
+            <a href="{{ route('index') }}">
               <i class="fa fa-home fa-2x text-dark" aria-hidden="true"></i><br>
               <b class="text-dark">トップ</b>
             </a>

@@ -81,7 +81,7 @@
               <!--/. キャッチコピー -->
 
               <!-- Default form subscription -->
-              <form class="text-center p-3" action="http://127.0.0.1:8000/cken/mypage/shopreg" method="post">
+              <form class="text-center p-3" action="{{ route('shopreg') }}" method="post">
                 {{ csrf_field() }}
 
                 <!-- Name -->
@@ -190,13 +190,13 @@
 
                         <div class="row">
                           <div class="col-6 text-right">
-                            <form action="http://127.0.0.1:8000/cken/mypage/shop/went/{{ $shop->id }}" method="post">
+                            <form action="{{ route('wentbutton', $shop->id) }}" method="post">
                               {{ csrf_field() }}
                               <button type="submit" class="btn btn-success text-dark">行った！</button>
                             </form>
                           </div>
                           <div class="col-6 text-left">
-                            <a href="http://127.0.0.1:8000/cken/mypage/goshopinfo/{{ $shop->id }}" class="btn btn-info text-dark">詳細をみる</a>
+                            <a href="{{ route('goshopinfo', $shop->id) }}" class="btn btn-info text-dark">詳細をみる</a>
                           </div>
                         </div>
 
@@ -242,13 +242,13 @@
 
                         <div class="row">
                           <div class="col-6 text-right">
-                            <form action="http://127.0.0.1:8000/cken/mypage/shop/notwent/{{$shop->id}}" method="post">
+                            <form action="{{ route('notwentbutton', $shop->id) }}" method="post">
                               {{ csrf_field() }}
                               <button type="submit" class="btn btn-success text-dark">行っとらん</button>
                             </form>
                           </div>
                           <div class="col-6 text-left">
-                            <a href="http://127.0.0.1:8000/cken/mypage/wentshopinfo/{{ $shop->id }}" class="btn btn-info text-dark">詳細をみる</a>
+                            <a href="{{ route('wentshopinfo', $shop->id) }}" class="btn btn-info text-dark">詳細をみる</a>
                           </div>
                         </div>
 
@@ -278,7 +278,7 @@
         <div class="footer-copyright text-center" style="background-color: #afeeee;">
           <div class="row mt-1">
             <div class="col-4">
-              <a href="http://127.0.0.1:8000/">
+              <a href="{{ route('index') }}">
                 <i class="fa fa-home fa-2x text-dark" aria-hidden="true"></i><br>
                 <b class="text-dark">トップ</b>
               </a>
@@ -326,7 +326,7 @@
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="news">
 
               <!-- Default form subscription -->
-              <form class="text-center p-3" action="http://127.0.0.1:8000/cken/mypage/newsreg" method="post">
+              <form class="text-center p-3" action="{{ route('newsreg') }}" method="post">
                 {{ csrf_field() }}
 
                 <!-- キャッチコピー -->
@@ -421,7 +421,7 @@
         <div class="footer-copyright text-center" style="background-color: #afeeee;">
           <div class="row mt-1">
             <div class="col-4">
-              <a href="http://127.0.0.1:8000/">
+              <a href="{{ route('index') }}">
                 <i class="fa fa-home fa-2x text-dark" aria-hidden="true"></i><br>
                 <b class="text-dark">トップ</b>
               </a>
@@ -433,7 +433,7 @@
               </a>
             </div>
             <div class="col-4">
-              <a href="http://127.0.0.1:8000/cken/mypage/edit">
+              <a href="{{ route('edit') }}">
                 <i class="fa fa-pencil-square-o fa-2x text-dark" aria-hidden="true"></i><br>
                 <b class="text-dark">投稿管理/修正</b>
               </a>

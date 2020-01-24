@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{ route('edit') }}<!DOCTYPE html>
 @extends('layouts.app')
 <html lang="en">
 
@@ -58,12 +58,14 @@
         <!-- Links -->
         <ul class="navbar-nav"><!-- バーガーメニューを開いたときは左揃え(デフォルト) -->
           <li class="nav-item active">
-            <a class="nav-link text-dark" href="http://127.0.0.1:8000/login">
+            <!-- <a class="nav-link text-dark" href="http://127.0.0.1:8000/login"> -->
+            <a class="nav-link text-dark" href="{{ route('login') }}">
             <i class="fa fa-sign-in" aria-hidden="true"></i> ログイン
             <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link text-dark" href="http://127.0.0.1:8000/register">
+            <!-- <a class="nav-link text-dark" href="http://127.0.0.1:8000/register"> -->
+            <a class="nav-link text-dark" href="{{ route('register') }}">
             <i class="fa fa-user-plus" aria-hidden="true"></i> 新規登録
             <span class="sr-only">(current)</span></a>
           </li>
@@ -114,7 +116,9 @@
     <div class="container-fluid main">
 
       <!-- キャッチコピー -->
-      <p class="catch-copy text-center border-bottom border-info mt-3 mb-5">CKénで始めるお出かけライフ</p>
+      <p class="catch-copy text-center border-bottom border-info mt-3 mb-5">
+        CKénで始めるお出かけライフ
+      </p>
       <!--/. キャッチコピー -->
 
       <!-- グリッドシステム1段目 -->
@@ -157,13 +161,13 @@
                               <!--<th scope="row">{{ $cont->created_at->format('Y/m/d H:m:s') }}</th>-->
                               <th scope="row">{{ $cont->updated_at->format('Y/m/d') }}</th>
                               <td>{{ $cont->user->name }}</td>
-                              <td><a href="http://127.0.0.1:8000/cken/newsdetail/{{ $cont->id }}" target="_blank"><u class="text-primary">{{ $cont->title }}</u></a></td>
+                              <td><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->title }}</u></a></td>
                             </tr>
                           @endforeach
                           <tr>
                             <th scope="row"></th>
                             <td></td>
-                            <td><a href="http://127.0.0.1:8000/cken/newsmore"><u class="text-primary">もっと見る</u></a></td>
+                            <td><a href="{{ route('newsmore') }}"><u class="text-primary">もっと見る</u></a></td>
                           </tr>
                         @else
                           @foreach ($news as $cont)
@@ -171,7 +175,7 @@
                               <!--<th scope="row">{{ $cont->created_at->format('Y-m-d') }}</th>-->
                               <th scope="row">{{ $cont->updated_at->format('Y/m/d') }}</th>
                               <td>{{ $cont->user->name }}</td>
-                              <td><a href="http://127.0.0.1:8000/cken/newsdetail/{{ $cont->id }}" target="_blank"><u class="text-primary">{{ $cont->title }}</u></a></td>
+                              <td><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->title }}</u></a></td>
                             </tr>
                           @endforeach
                         @endif
@@ -331,7 +335,7 @@
       <div class="footer-copyright text-center" style="background-color: #afeeee;">
         <div class="row mt-1">
           <div class="col-4">
-            <a href="http://127.0.0.1:8000/">
+            <a href="{{ route('index') }}">
               <i class="fa fa-home fa-2x text-dark" aria-hidden="true"></i><br>
               <b class="text-dark">トップ</b>
             </a>
@@ -361,7 +365,7 @@
       <div class="footer-copyright text-center" style="background-color: #afeeee;">
         <div class="row mt-1">
           <div class="col-4">
-            <a href="http://127.0.0.1:8000/">
+            <a href="{{ route('index') }}">
               <i class="fa fa-home fa-2x text-dark" aria-hidden="true"></i><br>
               <b class="text-dark">トップ</b>
             </a>
@@ -373,7 +377,7 @@
             </a>
           </div>
           <div class="col-4">
-            <a href="http://127.0.0.1:8000/cken/mypage/edit">
+            <a href="{{ route('edit') }}">
               <i class="fa fa-pencil-square-o fa-2x text-dark" aria-hidden="true"></i><br>
               <b class="text-dark">投稿管理/修正</b>
             </a>

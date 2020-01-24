@@ -66,7 +66,7 @@
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="news">
 
               <!-- Default form subscription -->
-              <form class="text-center p-3" action="http://127.0.0.1:8000/cken/mypage/delete" method="post">
+              <form class="text-center p-3" action="{{ route('newseditdelete') }}" method="post">
                 {{ csrf_field() }}
 
                 <!-- キャッチコピー -->
@@ -95,8 +95,9 @@
                               <th scope="row" class="align-middle">
                                 {{ $cont->updated_at->format('Y/m/d') }}
                               </th>
-                              <td class="align-middle"><a href="http://127.0.0.1:8000/cken/newsdetail/{{ $cont->id }}" target="_blank"><u class="text-primary">{{ $cont->title }}</u></a></td>
-                              <td class="align-middle"><a class="btn btn-info text-dark" href="http://127.0.0.1:8000/cken/mypage/editretouch/{{ $cont->id }}" role="button">修正</a></td>
+                              <!-- <td class="align-middle"><a href="http://127.0.0.1:8000/cken/newsdetail/{{ $cont->id }}" target="_blank"><u class="text-primary">{{ $cont->title }}</u></a></td> -->
+                              <td class="align-middle"><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->title }}</u></a></td>
+                              <td class="align-middle"><a class="btn btn-info text-dark" href="{{ route('editretouch', $cont->id) }}" role="button">修正</a></td>
                               <td class="align-middle"><input type="checkbox" name="chkDelete[]" value="{{ $cont->id }}"></td>
                             </tr>
                           @endforeach
@@ -165,7 +166,7 @@
         <div class="footer-copyright text-center" style="background-color: #afeeee;">
           <div class="row mt-1">
             <div class="col-4">
-              <a href="http://127.0.0.1:8000/">
+              <a href="{{ route('index') }}">
                 <i class="fa fa-home fa-2x text-dark" aria-hidden="true"></i><br>
                 <b class="text-dark">トップ</b>
               </a>
@@ -177,7 +178,7 @@
               </a>
             </div>
             <div class="col-4">
-              <a href="http://127.0.0.1:8000/cken/mypage/edit">
+              <a href="{{ route('edit') }}">
                 <i class="fa fa-pencil-square-o fa-2x text-dark" aria-hidden="true"></i><br>
                 <b class="text-dark">投稿管理/修正</b>
               </a>

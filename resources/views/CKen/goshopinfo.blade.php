@@ -89,7 +89,7 @@
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-success" data-dismiss="modal">いいえ</button>
-                      <a href="http://127.0.0.1:8000/cken/mypage/shop/delete/{{$goshops->id}}">
+                      <a href="{{ route('deletebutton', $goshops->id) }}">
                         <button type="button" class="btn btn-info">削除する</button>
                       </a>
                     </div>
@@ -141,7 +141,7 @@
             </table>
 
             <div class="mb-3">
-              <a href="http://127.0.0.1:8000/cken/mypage/retouch/{{$goshops->id}}">
+              <a href="{{ route('retouch', $goshops->id) }}">
                 <button type="button" class="btn btn-success text-dark">更新</button>
               </a>
               <a href="http://127.0.0.1:8000/cken/mypage">
@@ -180,7 +180,7 @@
       <div class="footer-copyright text-center" style="background-color: #afeeee;">
         <div class="row mt-1">
           <div class="col-4">
-            <a href="http://127.0.0.1:8000/">
+            <a href="{{ route('index') }}">
               <i class="fa fa-home fa-2x text-dark" aria-hidden="true"></i><br>
               <b class="text-dark">トップ</b>
             </a>
