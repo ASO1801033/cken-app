@@ -95,7 +95,6 @@
                               <th scope="row" class="align-middle">
                                 {{ $cont->updated_at->format('Y/m/d') }}
                               </th>
-                              <!-- <td class="align-middle"><a href="http://127.0.0.1:8000/cken/newsdetail/{{ $cont->id }}" target="_blank"><u class="text-primary">{{ $cont->title }}</u></a></td> -->
                               <td class="align-middle"><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->title }}</u></a></td>
                               <td class="align-middle"><a class="btn btn-info text-dark" href="{{ route('editretouch', $cont->id) }}" role="button">修正</a></td>
                               <td class="align-middle"><input type="checkbox" name="chkDelete[]" value="{{ $cont->id }}"></td>

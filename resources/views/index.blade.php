@@ -1,4 +1,4 @@
-{{ route('edit') }}<!DOCTYPE html>
+<!DOCTYPE html>
 @extends('layouts.app')
 <html lang="en">
 
@@ -58,13 +58,11 @@
         <!-- Links -->
         <ul class="navbar-nav"><!-- バーガーメニューを開いたときは左揃え(デフォルト) -->
           <li class="nav-item active">
-            <!-- <a class="nav-link text-dark" href="http://127.0.0.1:8000/login"> -->
             <a class="nav-link text-dark" href="{{ route('login') }}">
             <i class="fa fa-sign-in" aria-hidden="true"></i> ログイン
             <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <!-- <a class="nav-link text-dark" href="http://127.0.0.1:8000/register"> -->
             <a class="nav-link text-dark" href="{{ route('register') }}">
             <i class="fa fa-user-plus" aria-hidden="true"></i> 新規登録
             <span class="sr-only">(current)</span></a>

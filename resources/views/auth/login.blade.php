@@ -16,34 +16,7 @@
 
       <!-- Navbar brand -->
       <a class="navbar-brand" href="/"><img src="{{ asset('img/logo.png') }}" width=111px height=39px></a>
-
-      <!-- ログインしている時はログイン者名を表示 -->
-      @guest
-      @else
-        <div class="dropdown float-right">
-          <a class="dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {{ Auth::user()->name }}
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-            <a class="nav-link text-dark" href="http://127.0.0.1:8000/cken/mypage">
-            <i class="fa fa-file-text-o" aria-hidden="true"></i> マイページ
-            <span class="sr-only">(current)</span></a>
-
-            <a href="{{ route('logout') }}"
-              onclick="event.preventDefault();
-              document.getElementById('logout-form').submit();" class="text-right">
-              <i class="fa fa-sign-out" aria-hidden="true"></i> ログアウト
-            </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-              {{ csrf_field() }}
-            </form>
-          </div>
-        </div>
-      @endguest
-      <!--/. ログイン者名表示 -->
-
       @auth <!-- ログインしている時はナビゲーションバーの中身を非表示 -->
-
       <!-- ログインしていない時はナビゲーションバーの中身を表示 -->
       @else
       <!-- Collapse button -->
