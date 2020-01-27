@@ -128,11 +128,11 @@
                         </div>
                       </div>
                     </div>
-                  </form>
-              </div>
+                  </div>
+                </form>
               <!-- Default form subscription -->
             </div>
-            
+
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="coupon">
 
               <!-- Default form subscription -->
