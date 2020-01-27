@@ -62,6 +62,7 @@
                 aria-selected="false">クーポン管理</a>
             </li>
           </ul>
+
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="news">
 
@@ -104,8 +105,8 @@
                       </table>
                     </div>
                   </div>
-
                   <button class="btn btn-success text-dark" type="button" data-toggle="modal" data-target="#basicExampleModal">チェックした投稿を削除する</button>
+                @endif
 
                   <!-- Modal -->
                   <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -128,12 +129,10 @@
                       </div>
                     </div>
                   </form>
-
-                @endif
               </div>
               <!-- Default form subscription -->
-
             </div>
+            
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="coupon">
 
               <!-- Default form subscription -->
@@ -145,9 +144,6 @@
                   クーポン管理
                 </p>
                 <!--/. キャッチコピー -->
-
-                <!-- Register in button -->
-                <input class="btn btn-info text-dark" type="submit" value="投稿">
 
               </form>
               <!-- Default form subscription -->
