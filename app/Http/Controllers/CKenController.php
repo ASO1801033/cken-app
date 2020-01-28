@@ -11,6 +11,7 @@ use App\Http\Requests\UpdateRequest;
 use App\Shop;
 use App\User;
 use App\News;
+use App\Coupon;
 
 class CkenController extends Controller
 {
