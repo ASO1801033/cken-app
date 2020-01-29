@@ -407,7 +407,16 @@
 
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="coupon">
-              クーポンを作成してみましょう！
+              <form class="text-center p-3" action="#" method="post">
+                {{ csrf_field() }}
+
+                <!-- キャッチコピー -->
+                <p class="catch-copy mt-3">
+                  クーポン作成
+                </p>
+                <!--/. キャッチコピー -->
+                
+              </form>
             </div>
           </div>
         </div>
