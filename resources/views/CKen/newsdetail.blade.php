@@ -89,7 +89,7 @@
 
       <h5 class="mb-3">投稿者<br>▶︎{{ $detail->user->name }}</h5>
       <h5 class="mb-3">日付<br>▶︎{{ $detail->updated_at->format('Y/m/d') }}</h5>
-      <h5 class="mb-3">タイトル<br>▶︎{{ $detail->title }}</h5>
+      <h5 class="mb-3">タイトル<br>▶︎{{ $detail->newstitle }}</h5>
       <h5 class="mb-3">お知らせ内容<br>▶︎{{ $detail->news }}</h5>
 
       <!-- お知らせを閉じるボタン -->

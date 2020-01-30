@@ -159,7 +159,7 @@
                               <!--<th scope="row">{{ $cont->created_at->format('Y/m/d H:m:s') }}</th>-->
                               <th scope="row">{{ $cont->updated_at->format('Y/m/d') }}</th>
                               <td>{{ $cont->user->name }}</td>
-                              <td><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->title }}</u></a></td>
+                              <td><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->newstitle }}</u></a></td>
                             </tr>
                           @endforeach
                           <tr>
@@ -173,7 +173,7 @@
                               <!--<th scope="row">{{ $cont->created_at->format('Y-m-d') }}</th>-->
                               <th scope="row">{{ $cont->updated_at->format('Y/m/d') }}</th>
                               <td>{{ $cont->user->name }}</td>
-                              <td><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->title }}</u></a></td>
+                              <td><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->newstitle }}</u></a></td>
                             </tr>
                           @endforeach
                         @endif

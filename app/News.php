@@ -10,7 +10,7 @@ class News extends Model
     protected $guarded = ['id', 'user_id'];
 
     // 変更するかもしれないカラム
-    protected $fillable = ['news', 'flg', 'title'];
+    protected $fillable = ['news', 'flg', 'newstitle'];
 
     //外部キー(user_id)に対応するデータを取得するメソッド
     public function user() {
