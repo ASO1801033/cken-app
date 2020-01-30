@@ -24,7 +24,7 @@ class NewsRequest extends FormRequest
       //検証ルール
       $validate_rule = [
         'contents' => 'required',
-        'title' => 'required',
+        'coupontitle' => 'required',
         'startdate' => 'required',
         'finishdate' => 'required'
       ];
@@ -35,7 +35,7 @@ class NewsRequest extends FormRequest
     public function messages() {
       $msg = [
         'contents.required' => '↓内容は必須入力です！',
-        'title.required' => '↓タイトルは必須入力です！',
+        'coupontitle.required' => '↓タイトルは必須入力です！',
         'startdate.required' => '↓開始日時は必須入力です！',
         'finishdate.required' => '↓終了日時は必須入力です！'
       ];

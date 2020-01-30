@@ -24,7 +24,7 @@ class NewsRequest extends FormRequest
       //検証ルール
       $validate_rule = [
         'news' => 'required',
-        'title' => 'required'
+        'newstitle' => 'required'
       ];
 
       return $validate_rule;
@@ -33,7 +33,7 @@ class NewsRequest extends FormRequest
     public function messages() {
       $msg = [
         'news.required' => '↓内容は必須入力です！',
-        'title.required' => '↓タイトルは必須入力です！'
+        'newstitle.required' => '↓タイトルは必須入力です！'
       ];
 
       return $msg; // 忘れずに!
