@@ -335,7 +335,7 @@
                 </p>
                 <!--/. キャッチコピー -->
 
-                <!-- Memo -->
+                <!-- form-group -->
                 <div class="form-group">
 
                   @if ($errors->has('title'))
@@ -415,8 +415,137 @@
                   クーポン作成
                 </p>
                 <!--/. キャッチコピー -->
-                
+
+                <!-- form-group -->
+                <div class="form-group">
+
+
+                  <!-- 日付選択 -->
+                  <div>
+                    開始日：
+                    <select name="year" id="year">
+                      <option value="2018" selected="selected">2018</option>
+                      <option value="2019">2019</option>
+                      <option value="2020">2020</option>
+                      <option value="2021">2021</option>
+                      <option value="2022">2022</option>
+                    </select><label for="year">年</label>
+                    <select name="month" id="month">
+                      <option value="01" selected="selected">1</option>
+                      <option value="02">2</option>
+                      <option value="03">3</option>
+                      <option value="04">4</option>
+                      <option value="05">5</option>
+                      <option value="06">6</option>
+                      <option value="07">7</option>
+                      <option value="08">8</option>
+                      <option value="09">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select><label for="month">月</label>
+                    <select name="day" id="day">
+                      <option value="01" selected="selected">1</option>
+                      <option value="02">2</option>
+                      <option value="03">3</option>
+                      <option value="04">4</option>
+                      <option value="05">5</option>
+                      <option value="06">6</option>
+                      <option value="07">7</option>
+                      <option value="08">8</option>
+                      <option value="09">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                      <option value="24">24</option>
+                      <option value="25">25</option>
+                      <option value="26">26</option>
+                      <option value="27">27</option>
+                      <option value="28">28</option>
+                      <option value="29">29</option>
+                      <option value="30">30</option>
+                      <option value="31">31</option>
+                    </select><label for="day">日</label>
+                  </div>
+                  <!--/. 日付選択 -->
+
+                  @if ($errors->has('title'))
+                  <div>
+                    @foreach ($errors->get('title') as $e)
+                    <div class="text-danger text-left">
+                      {{$e}}<input type="text" class="form-control mb-2" placeholder="タイトル" name="title" value="{{old('title')}}">
+                    </div>
+
+                    @endforeach
+                  </div>
+                  @else
+                    <input type="text" class="form-control mb-4" placeholder="タイトル" name="title" value="{{old('title')}}">
+                  @endif
+
+
+                  @if ($errors->has('contents'))
+                  <div>
+                    @foreach ($errors->get('contents') as $e)
+                    <div class="text-danger text-left">
+                      {{$e}}
+                    </div>
+                    @endforeach
+                  </div>
+                  <textarea class="form-control rounded-0" rows="5" placeholder="クーポン内容を入力してください" name="contents" value="{{old('contents')}}"></textarea>
+                  @else
+                    <textarea class="form-control rounded-0" rows="6" placeholder="クーポン内容を入力してください" name="contents" value="{{old('contents')}}"></textarea>
+                  @endif
+                </div>
+
+                <!-- Register in button -->
+                <input class="btn btn-info text-dark" type="submit" value="投稿">
+
               </form>
+
+              <!-- 登録完了メッセージの表示 -->
+              @if(Session::has('flashmessage'))
+                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+                <script>
+                  $(window).load(function() {
+                  $('#modal_box').modal('show');
+                  });
+                </script>
+
+                <!-- モーダルウィンドウの中身 -->
+                <div class="modal fade" id="modal_box" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h6 class="modal-title" id="exampleModalLabel">CKén-マイページ(お知らせ投稿)</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        {{ session('flashmessage') }}
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">閉じる</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- モーダルウィンドウの中身 -->
+              @endif
+              <!-- 登録完了メッセージの表示 -->
+
             </div>
           </div>
         </div>
@@ -456,6 +585,109 @@
 
     <!-- Script -->
     @section('script')
+    <script>/*日付選択スクリプト*/
+      var _addEvent=function(t,p,l){try{t.addEventListener(p,l,false);}catch(e){t.attachEvent("on"+p,function(e){l.call(t,e);});}};
+
+      (function(){
+      _addEvent(window, "load", function(e) {
+        var yearId = "year"; // 年コントロールのID
+        var monthId = "month"; // 月コントロールのID
+        var dayId = "day"; // 日コントロールのID
+
+        var targetYear = document.getElementById(yearId);
+        var targetMonth = document.getElementById(monthId);
+        var targetDay = document.getElementById(dayId);
+
+        _addEvent(targetYear, "change", function(e) {
+          // 年コントロールを変更したとき
+          nonExistDayIsNonDisplayed(this, targetMonth, targetDay);
+        });
+        _addEvent(targetMonth, "change", function(e) {
+          // 月コントロールを変更したとき
+          nonExistDayIsNonDisplayed(targetYear, this, targetDay);
+        });
+      });
+
+      /**
+       * 存在しない日（2月30日など）の選択肢を非表示にする
+       *
+       * @param targetYear 年コントロール
+       * @param targetMonth 月コントロール
+       * @param targetDay 日コントロール
+       */
+      var nonExistDayIsNonDisplayed = function(targetYear, targetMonth, targetDay) {
+        var selectedMonthValue = parseInt(targetMonth.getElementsByTagName("option")[targetMonth.selectedIndex].value, 10);
+        var targetDayOptions = targetDay.getElementsByTagName("option");
+
+        if (selectedMonthValue === 2) {
+          // 2月の場合
+          var selectedYearValue = parseInt(targetYear.getElementsByTagName("option")[targetYear.selectedIndex].value, 10)
+          var leapYear = isLeapYear(selectedYearValue); // 閏年か
+
+          for (var i = targetDayOptions.length - 1; i >= 0; i--) {
+            var targetDayOption = targetDayOptions[i];
+            var dayValue = parseInt(targetDayOption.value, 10);
+            if (dayValue >= 30 || (dayValue === 29 && !leapYear)) {
+              targetDayOption.disabled = true; // 選択不能指定
+              if (targetDayOption.selected) {
+                // 29日(閏年でない場合のみ)、30日、31日のいずれかが選択されていた場合は、2月の最終日に変更
+                if (leapYear) {
+                  targetDay.value = "29";
+                } else {
+                  targetDay.value = "28";
+                }
+              }
+            } else if (targetDayOption.disabled) {
+              // 選択不能指定が成されていたら解除
+              targetDayOption.disabled = false;
+            } else {
+              break;
+            }
+          }
+        } else if (selectedMonthValue === 4 || selectedMonthValue === 6 || selectedMonthValue === 9 || selectedMonthValue === 11) {
+          // 月の日数が30日の場合
+          for (var i = targetDayOptions.length - 1; i >= 0; i--) {
+            var targetDayOption = targetDayOptions[i];
+            var dayValue = parseInt(targetDayOption.value, 10);
+            if (dayValue >= 31) {
+              targetDayOption.disabled = true; // 選択不能指定
+              if (targetDayOption.selected) {
+                // 31日が選択されていた場合は、各月の最終日に変更
+                targetDay.value = "30";
+              }
+            } else if (targetDayOption.disabled) {
+              // 選択不能指定が成されていたら解除
+              targetDayOption.disabled = false;
+            } else {
+              break;
+            }
+          }
+        } else {
+          // 月の日数が31日の場合
+          for (var i = targetDayOptions.length - 1; i >= 0; i--) {
+            var targetDayOption = targetDayOptions[i];
+            if (targetDayOption.disabled) {
+              // 選択不能指定が成されていたら解除
+              targetDayOption.disabled = false;
+            } else {
+              break;
+            }
+          }
+        }
+      };
+
+      /**
+       * 閏年か
+       *
+       * @param year 年
+       *
+       * @return 閏年ならtrue、それ以外の場合はfalse
+       */
+      var isLeapYear = function(year) {
+        return new Date(year, 1, 29).getMonth() === 1;
+      };
+      })();
+    </script>
     <!--/. Script -->
 
   </body>

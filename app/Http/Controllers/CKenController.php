@@ -8,6 +8,7 @@ use Validator;
 use App\Http\Requests\RegRequest;
 use App\Http\Requests\NewsRequest;
 use App\Http\Requests\UpdateRequest;
+use App\Http\Requests\CouponRequest;
 use App\Shop;
 use App\User;
 use App\News;
