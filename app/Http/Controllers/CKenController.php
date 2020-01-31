@@ -21,12 +21,21 @@ class CkenController extends Controller
     $newsdata = News::orderBy('updated_at', 'desc')->get();
     $newsdata_5 = News::orderBy('updated_at', 'desc')->limit(5)->get();
 
+    $coupondata = Coupon::orderBy('updated_at', 'desc')->get();
+    $coupondata_5 = Coupon::orderBy('updated_at', 'desc')->limit(5)->get();
+
     // テンプレートへ渡す情報を作成する。
     $newsdata = [
         'news' => $newsdata,
         'news_5' => $newsdata_5
     ];
-    return view('index', $newsdata);
+
+    // テンプレートへ渡す情報を作成する。
+    $coupondata = [
+        'coupon' => $coupondata,
+        'coupon_5' => $coupondata_5
+    ];
+    return view('index', $newsdata, $coupondata);
   }
 
   //お知らせ詳細ページのアクション

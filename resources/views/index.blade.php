@@ -203,42 +203,50 @@
                 </div>
               </div>
 
-              <!-- 直近のクーポン -->
-              <div class="row">
-                <div class="col-md-12">
-                  <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th scope="col"><big>投稿日</big></th>
-                        <th scope="col"><big>投稿者</big></th>
-                        <th scope="col"><big>クーポン名</big></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">2019/11/7</th>
-                        <td>あやさん</td>
-                        <td><a href="https://www.apple.com/jp/" target="_blank"><u class="text-primary">クーポン</u></a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2019/11/7</th>
-                        <td>あやさん</td>
-                        <td><a href="https://www.apple.com/jp/" target="_blank"><u class="text-primary">クーポン</u></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2019/11/7</th>
-                        <td>あやさん</td>
-                        <td><a href="https://www.apple.com/jp/" target="_blank"><u class="text-primary">クーポン</u></a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td><a href="https://google.com" target="_blank"><u class="text-primary">もっと見る</u></a></td>
-                      </tr>
-                    </tbody>
-                  </table>
+              <!-- 直近のお知らせ -->
+              @if (count($coupon) == 0)
+                <div class="mt-3">投稿されたクーポンはありません</div>
+              @else
+                <div class="row">
+                  <div class="col-md-12">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col"><big>日付</big></th>
+                          <th scope="col"><big>投稿者</big></th>
+                          <th scope="col"><big>タイトル</big></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @if (count($coupon) > 5)
+                          @foreach ($coupon_5 as $cont)
+                            <tr>
+                              <!--<th scope="row">{{ $cont->created_at->format('Y/m/d H:m:s') }}</th>-->
+                              <th scope="row">{{ $cont->updated_at->format('Y/m/d') }}</th>
+                              <td>{{ $cont->user->name }}</td>
+                              <td><a href="#" target="_blank"><u class="text-primary">{{ $cont->coupontitle }}</u></a></td>
+                            </tr>
+                          @endforeach
+                          <tr>
+                            <th scope="row"></th>
+                            <td></td>
+                            <td><a href="#"><u class="text-primary">もっと見る</u></a></td>
+                          </tr>
+                        @else
+                          @foreach ($coupon as $cont)
+                            <tr>
+                              <!--<th scope="row">{{ $cont->created_at->format('Y-m-d') }}</th>-->
+                              <th scope="row">{{ $cont->updated_at->format('Y/m/d') }}</th>
+                              <td>{{ $cont->user->name }}</td>
+                              <td><a href="#" target="_blank"><u class="text-primary">{{ $cont->coupontitle }}</u></a></td>
+                            </tr>
+                          @endforeach
+                        @endif
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-              </div>
+              @endif
             </div>
           </div>
         </div>
