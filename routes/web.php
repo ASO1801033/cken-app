@@ -34,6 +34,9 @@ Route::post ('/cken/mypage/shopreg', 'CKenController@shopreg') -> middleware('au
 //お知らせ登録のルート情報(投稿ボタンを押した時)
 Route::post ('/cken/mypage/newsreg', 'CKenController@newsreg') -> middleware('auth')->name('newsreg'); //mypage.blade.php
 
+//クーポン登録のルート情報(投稿ボタンを押した時)
+Route::post ('/cken/mypage/couponreg', 'CKenController@couponreg') -> middleware('auth')->name('couponreg'); //mypage.blade.php
+
 //行きたいお店詳細のルート情報(詳細確認ボタンを押した時)
 Route::get ('/cken/mypage/goshopinfo/{id}', 'CKenController@goshopinfo') -> middleware('auth')->name('goshopinfo'); //goshopinfo.blade.php
 

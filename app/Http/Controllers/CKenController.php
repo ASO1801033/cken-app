@@ -105,6 +105,19 @@ class CkenController extends Controller
       return redirect('/cken/mypage')->with('flashmessage', 'お知らせの投稿が出来ました！');
   }
 
+  //企業ユーザークーポン投稿ボタンを押した時の処理
+  public function couponreg(CouponRequest $req) {
+      // DBにクーポン情報を登録
+      $coupon = new Coupon;
+      $form = $req->all();
+      $coupon->user_id = $req->user()->id;
+      $coupon->timestamps;
+      $coupon->fill($form)->save();
+
+      // テンプレート(resources/views/cken/mypage.blade.php)を表示
+      return redirect('/cken/mypage')->with('flashmessage', 'クーポンの投稿が出来ました！');
+  }
+
   //行きたいお店リストの詳細ボタンを押した時の処理
   public function goshopinfo($id) {
     //お店を取得しておくviewの引数にデータの変数を渡す

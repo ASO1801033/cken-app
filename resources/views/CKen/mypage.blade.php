@@ -387,7 +387,7 @@
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h6 class="modal-title" id="exampleModalLabel">CKén-マイページ(お知らせ投稿)</h6>
+                        <h6 class="modal-title" id="exampleModalLabel">CKén-マイページ</h6>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -407,7 +407,7 @@
 
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="coupon">
-              <form class="text-center p-3" action="#" method="post">
+              <form class="text-center p-3" action="{{ route('couponreg') }}" method="post">
                 {{ csrf_field() }}
 
                 <!-- キャッチコピー -->
@@ -447,17 +447,18 @@
                   @endif
                 </div>
 
+                <style>/*
                 <!-- 利用開始日： -->
                 <div class="text-left mb-2">
                   利用開始日：
-                  <select name="year" id="year">
+                  <select name="startyear" id="year">
                     <option value="2018" selected="selected">2018</option>
                     <option value="2019">2019</option>
                     <option value="2020">2020</option>
                     <option value="2021">2021</option>
                     <option value="2022">2022</option>
                   </select><label for="year">年</label>
-                  <select name="month" id="month">
+                  <select name="startmonth" id="month">
                     <option value="01" selected="selected">1</option>
                     <option value="02">2</option>
                     <option value="03">3</option>
@@ -471,7 +472,7 @@
                     <option value="11">11</option>
                     <option value="12">12</option>
                   </select><label for="month">月</label>
-                  <select name="day" id="day">
+                  <select name="startday" id="day">
                     <option value="01" selected="selected">1</option>
                     <option value="02">2</option>
                     <option value="03">3</option>
@@ -504,7 +505,7 @@
                     <option value="30">30</option>
                     <option value="31">31</option>
                   </select><label for="day">日　</label>
-                  <select name="hour" id="hour">
+                  <select name="starthour" id="hour">
                     <option value="00" selected="selected">00</option>
                     <option value="01">01</option>
                     <option value="02">02</option>
@@ -530,7 +531,7 @@
                     <option value="22">22</option>
                     <option value="23">23</option>
                   </select><label for="hour">時</label>
-                  <select name="minutes" id="minutes">
+                  <select name="startminutes" id="minutes">
                     <option value="00" selected="selected">00</option>
                     <option value="01">01</option>
                     <option value="02">02</option>
@@ -598,14 +599,14 @@
                 <!-- 利用終了日： -->
                 <div class="text-left mb-2">
                   利用終了日：
-                  <select name="year" id="year">
+                  <select name="finishyear" id="year">
                     <option value="2018" selected="selected">2018</option>
                     <option value="2019">2019</option>
                     <option value="2020">2020</option>
                     <option value="2021">2021</option>
                     <option value="2022">2022</option>
                   </select><label for="year">年</label>
-                  <select name="month" id="month">
+                  <select name="finishmonth" id="month">
                     <option value="01" selected="selected">1</option>
                     <option value="02">2</option>
                     <option value="03">3</option>
@@ -619,7 +620,7 @@
                     <option value="11">11</option>
                     <option value="12">12</option>
                   </select><label for="month">月</label>
-                  <select name="day" id="day">
+                  <select name="finishday" id="day">
                     <option value="01" selected="selected">1</option>
                     <option value="02">2</option>
                     <option value="03">3</option>
@@ -652,7 +653,7 @@
                     <option value="30">30</option>
                     <option value="31">31</option>
                   </select><label for="day">日　</label>
-                  <select name="hour" id="hour">
+                  <select name="finishhour" id="hour">
                     <option value="00" selected="selected">00</option>
                     <option value="01">01</option>
                     <option value="02">02</option>
@@ -678,7 +679,7 @@
                     <option value="22">22</option>
                     <option value="23">23</option>
                   </select><label for="hour">時</label>
-                  <select name="minutes" id="minutes">
+                  <select name="finishminutes" id="minutes">
                     <option value="00" selected="selected">00</option>
                     <option value="01">01</option>
                     <option value="02">02</option>
@@ -742,6 +743,7 @@
                   </select><label for="minutes">分</label>
                 </div>
                 <!--/. 利用終了日： -->
+                */</style>
 
                 <!-- Register in button -->
                 <input class="btn btn-info text-dark" type="submit" value="投稿">
@@ -763,7 +765,7 @@
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h6 class="modal-title" id="exampleModalLabel">CKén-マイページ(お知らせ投稿)</h6>
+                        <h6 class="modal-title" id="exampleModalLabel">CKén-マイページ</h6>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>

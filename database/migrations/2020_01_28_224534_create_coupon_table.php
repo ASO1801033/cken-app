@@ -13,15 +13,15 @@ class CreateCouponTable extends Migration
      */
     public function up()
     {
-        Schema::create('coupon', function (Blueprint $table) {
+        Schema::create('coupons', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('coupontitle');
             $table->string('contents');
-            $table->dateTime('startdate');
+            /*$table->dateTime('startdate');
             $table->dateTime('finishdate');
-            $table->integer('flg') -> default(0);
+            $table->integer('flg') -> default(0);*/
             $table->timestamps();
         });
     }
