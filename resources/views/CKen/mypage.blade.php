@@ -448,8 +448,8 @@
                 </div>
 
                 <div class="text-left">
-                  利用開始日：<input type="date" class="mb-2"></input>　利用開始時間：<input type="time" class="mb-2"></input>
-                  利用終了日：<input type="date" class="mb-2"></input>　利用終了時間：<input type="time" class="mb-2"></input>
+                  利用開始日：<input type="date" class="mb-2" name="startdate"></input>　利用開始時間：<input type="time" class="mb-2" name="starttime"></input>
+                  利用終了日：<input type="date" class="mb-2" name="startdate"></input>　利用終了時間：<input type="time" class="mb-2" name="finishtime"></input>
                 </div>
 
                 <style>/*
