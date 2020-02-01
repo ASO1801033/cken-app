@@ -447,6 +447,11 @@
                   @endif
                 </div>
 
+                <div class="text-left">
+                  利用開始日：<input type="date" class="mb-2"></input>　利用開始時間：<input type="time" class="mb-2"></input>
+                  利用終了日：<input type="date" class="mb-2"></input>　利用終了時間：<input type="time" class="mb-2"></input>
+                </div>
+
                 <style>/*
                 <!-- 利用開始日： -->
                 <div class="text-left mb-2">
