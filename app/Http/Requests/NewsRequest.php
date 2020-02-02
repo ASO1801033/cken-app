@@ -32,8 +32,8 @@ class NewsRequest extends FormRequest
 
     public function messages() {
       $msg = [
-        'news.required' => '↓内容は必須入力です！',
-        'newstitle.required' => '↓タイトルは必須入力です！'
+        'news.required' => '内容は必須入力です！',
+        'newstitle.required' => 'タイトルは必須入力です！'
       ];
 
       return $msg; // 忘れずに!

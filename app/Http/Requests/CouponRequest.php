@@ -36,12 +36,12 @@ class CouponRequest extends FormRequest
 
     public function messages() {
       $msg = [
-        'contents.required' => '↓内容は必須入力です！',
-        'coupontitle.required' => '↓タイトルは必須入力です！',
-        'startdate.required' => '↓必須入力です！',
-        'starttime.required' => '↓必須入力です！',
-        'finishdate.required' => '↓必須入力です！',
-        'finishtime.required' => '↓必須入力です！',
+        'contents.required' => 'クーポン内容は必須入力です！',
+        'coupontitle.required' => 'タイトルは必須入力です！',
+        'startdate.required' => '利用開始日は必須入力です！',
+        'starttime.required' => '利用開始時間は必須入力です！',
+        'finishdate.required' => '利用終了日は必須入力です！',
+        'finishtime.required' => '利用終了時間は必須入力です！',
       ];
 
       return $msg; // 忘れずに!

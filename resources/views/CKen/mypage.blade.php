@@ -43,7 +43,7 @@
 
     @if(Auth::user()->flg == 0)
       <!-- コンテンツ(スクロールするとヘッダーの下に動く) -->
-      <div class="container-fluid main marginB">
+      <div class="container-fluid main">
 
         <!-- キャッチコピー -->
         <p class="catch-copy text-center border-bottom border-info mt-3 mb-5">
@@ -95,7 +95,7 @@
                   @endforeach
                 </div>
                 @else
-                  <input type="text" class="form-control mb-4" placeholder="お店の名前" name="shopname" value="{{old('shopname')}}">
+                  <input type="text" class="form-control mb-3" placeholder="お店の名前" name="shopname" value="{{old('shopname')}}">
                 @endif
 
                 <!-- Homepage -->
@@ -109,11 +109,11 @@
                   @endforeach
                 </div>
                 @else
-                  <input type="text" class="form-control mb-4" placeholder="ホームページ" name="homepage" value="{{old('homepage')}}">
+                  <input type="text" class="form-control mb-3" placeholder="ホームページ" name="homepage" value="{{old('homepage')}}">
                 @endif
 
                 <!-- Adress -->
-                <input type="text" class="form-control mb-4" placeholder="お店の住所" name="adress" value="{{old('adress')}}">
+                <input type="text" class="form-control mb-3" placeholder="お店の住所" name="adress" value="{{old('adress')}}">
 
                 <!-- Memo -->
                 <div class="form-group">
@@ -341,28 +341,27 @@
                   @if ($errors->has('newstitle'))
                   <div>
                     @foreach ($errors->get('newstitle') as $e)
-                    <div class="text-danger text-left">
-                      {{$e}}<input type="text" class="form-control mb-2" placeholder="タイトル" name="newstitle" value="{{old('newstitle')}}">
-                    </div>
-
-                    @endforeach
-                  </div>
-                  @else
-                    <input type="text" class="form-control mb-4" placeholder="タイトル" name="newstitle" value="{{old('newstitle')}}">
-                  @endif
-
-
-                  @if ($errors->has('news'))
-                  <div>
-                    @foreach ($errors->get('news') as $e)
+                    <input type="text" class="form-control mb-0" placeholder="タイトル" name="newstitle" value="{{old('newstitle')}}">
                     <div class="text-danger text-left">
                       {{$e}}
                     </div>
                     @endforeach
                   </div>
-                  <textarea class="form-control rounded-0" rows="5" placeholder="お知らせを入力してください" name="news" value="{{old('news')}}"></textarea>
                   @else
-                    <textarea class="form-control rounded-0" rows="6" placeholder="お知らせを入力してください" name="news" value="{{old('news')}}"></textarea>
+                    <input type="text" class="form-control mb-3" placeholder="タイトル" name="newstitle" value="{{old('newstitle')}}">
+                  @endif
+
+                  @if ($errors->has('news'))
+                  <div>
+                    @foreach ($errors->get('news') as $e)
+                    <textarea class="form-control rounded-0 mb-0" rows="5" placeholder="お知らせを入力してください" name="news" value="{{old('news')}}"></textarea>
+                    <div class="text-danger text-left">
+                      {{$e}}
+                    </div>
+                    @endforeach
+                  </div>
+                  @else
+                    <textarea class="form-control rounded-0 mb-3" rows="6" placeholder="お知らせを入力してください" name="news" value="{{old('news')}}"></textarea>
                   @endif
                 </div>
 
@@ -422,35 +421,91 @@
                   @if ($errors->has('coupontitle'))
                   <div>
                     @foreach ($errors->get('coupontitle') as $e)
-                    <div class="text-danger text-left">
-                      {{$e}}<input type="text" class="form-control mb-2" placeholder="タイトル" name="coupontitle" value="{{old('coupontitle')}}">
-                    </div>
-
-                    @endforeach
-                  </div>
-                  @else
-                    <input type="text" class="form-control mb-4" placeholder="タイトル" name="coupontitle" value="{{old('coupontitle')}}">
-                  @endif
-
-
-                  @if ($errors->has('contents'))
-                  <div>
-                    @foreach ($errors->get('contents') as $e)
+                    <input type="text" class="form-control mb-0" placeholder="タイトル" name="coupontitle" value="{{old('coupontitle')}}">
                     <div class="text-danger text-left">
                       {{$e}}
                     </div>
                     @endforeach
                   </div>
-                  <textarea class="form-control rounded-0" rows="4" placeholder="クーポン内容を入力してください" name="contents" value="{{old('contents')}}"></textarea>
                   @else
-                    <textarea class="form-control rounded-0" rows="5" placeholder="クーポン内容を入力してください" name="contents" value="{{old('contents')}}"></textarea>
+                    <input type="text" class="form-control mb-3" placeholder="タイトル" name="coupontitle" value="{{old('coupontitle')}}">
                   @endif
+
+                  @if ($errors->has('contents'))
+                  <div>
+                    @foreach ($errors->get('contents') as $e)
+                    <textarea class="form-control rounded-0" rows="4" placeholder="クーポン内容を入力してください" name="contents" value="{{old('contents')}}"></textarea>
+                    <div class="text-danger text-left mb-2">
+                      {{$e}}
+                    </div>
+                    @endforeach
+                  </div>
+                  @else
+                    <textarea class="form-control rounded-0 mb-3" rows="5" placeholder="クーポン内容を入力してください" name="contents" value="{{old('contents')}}"></textarea>
+                  @endif
+
+                  <div class="text-left">
+
+                    @if ($errors->has('startdate'))
+                    <div>
+                      @foreach ($errors->get('startdate') as $e)
+                      利用開始日：<input type="date" class="mb-0" name="startdate" value="{{old('startdate')}}"></input>
+                      <div class="text-danger text-left">
+                        {{$e}}
+                      </div>
+                      @endforeach
+                    </div>
+                    @else
+                      利用開始日：<input type="date" class="mb-2" name="startdate" value="{{old('startdate')}}"></input>
+                    @endif
+
+                    @if ($errors->has('starttime'))
+                    <div>
+                      @foreach ($errors->get('starttime') as $e)
+                      　利用開始時間：<input type="time" class="mb-0" name="starttime" value="{{old('starttime')}}"></input><br>
+                      <div class="text-danger text-left">
+                        {{$e}}
+                      </div>
+                      @endforeach
+                    </div>
+                    @else
+                      　利用開始時間：<input type="time" class="mb-2" name="starttime" value="{{old('starttime')}}"></input><br>
+                    @endif
+
+                    @if ($errors->has('finishdate'))
+                    <div>
+                      @foreach ($errors->get('finishdate') as $e)
+                      利用終了日：<input type="date" class="mb-0" name="finishdate" value="{{old('finishdate')}}"></input>
+                      <div class="text-danger text-left">
+                        {{$e}}
+                      </div>
+                      @endforeach
+                    </div>
+                    @else
+                      利用終了日：<input type="date" class="mb-2" name="finishdate" value="{{old('finishdate')}}"></input>
+                    @endif
+
+                    @if ($errors->has('finishtime'))
+                    <div>
+                      @foreach ($errors->get('finishtime') as $e)
+                      　利用終了時間：<input type="time" class="mb-0" name="finishtime" value="{{old('finishtime')}}"></input><br>
+                      <div class="text-danger text-left">
+                        {{$e}}
+                      </div>
+                      @endforeach
+                    </div>
+                    @else
+                      　利用終了時間：<input type="time" class="mb-2" name="finishtime" value="{{old('finishtime')}}"></input><br>
+                    @endif
+
+                  </div>
+
+                  <!-- Register in button -->
+                  <input class="btn btn-info text-dark" type="submit" value="投稿">
+
                 </div>
 
-                <div class="text-left">
-                  利用開始日：<input type="date" class="mb-2" name="startdate"></input>　利用開始時間：<input type="time" class="mb-2" name="starttime"></input>
-                  利用終了日：<input type="date" class="mb-2" name="finishdate"></input>　利用終了時間：<input type="time" class="mb-2" name="finishtime"></input>
-                </div>
+
 
                 <style>/*
                 <!-- 利用開始日： -->
@@ -749,9 +804,6 @@
                 </div>
                 <!--/. 利用終了日： -->
                 */</style>
-
-                <!-- Register in button -->
-                <input class="btn btn-info text-dark" type="submit" value="投稿">
 
               </form>
 
