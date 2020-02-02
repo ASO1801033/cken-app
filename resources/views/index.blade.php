@@ -111,7 +111,7 @@
     <!--/. カルーセル -->
 
     <!-- コンテンツ(スクロールするとヘッダーの下に動く) -->
-    <div class="container-fluid main">
+    <div class="container-fluid main marginB">
 
       <!-- キャッチコピー -->
       <p class="catch-copy text-center border-bottom border-info mt-3 mb-5">
@@ -135,6 +135,11 @@
                   <i class="fa fa-info-circle fa-2x" aria-hidden="true">
                     おしらせ
                   </i>
+                </div>
+                <div class="text-danger mt-2">
+                  @if (count($news) > 5)
+                    　最新のお知らせ5件を表示中です！
+                  @endif
                 </div>
               </div>
 
@@ -200,6 +205,11 @@
                   <i class="fa fa-money fa-2x" aria-hidden="true">
                     クーポン
                   </i>
+                </div>
+                <div class="text-danger mt-2">
+                  @if (count($coupon) > 5)
+                    　最新のクーポン5件を表示中です！
+                  @endif
                 </div>
               </div>
 

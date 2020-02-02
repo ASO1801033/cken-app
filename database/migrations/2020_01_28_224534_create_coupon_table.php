@@ -19,9 +19,11 @@ class CreateCouponTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('coupontitle');
             $table->string('contents');
-            /*$table->dateTime('startdate');
-            $table->dateTime('finishdate');
-            $table->integer('flg') -> default(0);*/
+            $table->date('startdate');
+            $table->time('starttime');
+            $table->date('finishdate');
+            $table->time('finishtime');
+            $table->integer('flg') -> default(0);
             $table->timestamps();
         });
     }
