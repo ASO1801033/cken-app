@@ -79,7 +79,7 @@
                   <label class="col-md-12 control-label text-left mb-0">タイトル</label>
 
                   <div class="col-md-12">
-                      <input type="text" class="form-control" name="title" value="{{ $editdata->title }}">
+                      <input type="text" class="form-control" name="newstitle" value="{{ $editdata->newstitle }}">
                   </div>
               </div>
 

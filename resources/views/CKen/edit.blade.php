@@ -96,7 +96,7 @@
                               <th scope="row" class="align-middle">
                                 {{ $cont->updated_at->format('Y/m/d') }}
                               </th>
-                              <td class="align-middle"><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->title }}</u></a></td>
+                              <td class="align-middle"><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->newstitle }}</u></a></td>
                               <td class="align-middle"><a class="btn btn-info text-dark" href="{{ route('editretouch', $cont->id) }}" role="button">修正</a></td>
                               <td class="align-middle"><input type="checkbox" name="chkDelete[]" value="{{ $cont->id }}"></td>
                             </tr>
@@ -114,7 +114,7 @@
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">CKén-マイページ(お知らせ削除)</h5>
+                          <h5 class="modal-title" id="exampleModalLabel">CKén-マイページ</h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>

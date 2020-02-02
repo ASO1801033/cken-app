@@ -264,13 +264,13 @@ class CkenController extends Controller
     //お店を取得しておくviewの引数にデータの変数を渡す
     $newsdata = News::find($id);
 
-      if(isset($req->title)) {
-        //shopnameに入力があれば更新
-        $newsdata->title = $req->title;
+      if(isset($req->newstitle)) {
+        //newstitleに入力があれば更新
+        $newsdata->newstitle = $req->newstitle;
       }
 
       if(isset($req->news)) {
-        //shopnameに入力があれば更新
+        //newsに入力があれば更新
         $newsdata->news = $req->news;
       }
       $newsdata->save();
