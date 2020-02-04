@@ -434,8 +434,8 @@
                   @if ($errors->has('contents'))
                   <div>
                     @foreach ($errors->get('contents') as $e)
-                    <textarea class="form-control rounded-0" rows="4" placeholder="クーポン内容を入力してください" name="contents" value="{{old('contents')}}"></textarea>
-                    <div class="text-danger text-left mb-2">
+                    <textarea class="form-control rounded-0" rows="3" placeholder="クーポン内容を入力してください" name="contents" value="{{old('contents')}}"></textarea>
+                    <div class="text-danger text-left">
                       {{$e}}
                     </div>
                     @endforeach
@@ -445,58 +445,67 @@
                   @endif
 
                   <div class="text-left">
-
-                    @if ($errors->has('startdate'))
-                    <div>
-                      @foreach ($errors->get('startdate') as $e)
-                      利用開始日：<input type="date" class="mb-0" name="startdate" value="{{old('startdate')}}"></input>
-                      <div class="text-danger text-left">
-                        {{$e}}
+                    <div class="row">
+                      <div style="width: 55%;">
+                        @if ($errors->has('startdate'))
+                        <div>
+                          @foreach ($errors->get('startdate') as $e)
+                          　利用開始日：<input type="date" class="mb-0" name="startdate" value="{{old('startdate')}}"></input>
+                          <div class="text-danger text-left">
+                            　{{$e}}
+                          </div>
+                          @endforeach
+                        </div>
+                        @else
+                          　利用開始日：<input type="date" class="mb-2" name="startdate" value="{{old('startdate')}}"></input>
+                        @endif
                       </div>
-                      @endforeach
-                    </div>
-                    @else
-                      利用開始日：<input type="date" class="mb-2" name="startdate" value="{{old('startdate')}}"></input>
-                    @endif
-
-                    @if ($errors->has('starttime'))
-                    <div>
-                      @foreach ($errors->get('starttime') as $e)
-                      　利用開始時間：<input type="time" class="mb-0" name="starttime" value="{{old('starttime')}}"></input><br>
-                      <div class="text-danger text-left">
-                        {{$e}}
+                      <div style="width: 45%;">
+                        @if ($errors->has('starttime'))
+                        <div>
+                          @foreach ($errors->get('starttime') as $e)
+                          利用開始時間：<input type="time" class="mb-0" name="starttime" value="{{old('starttime')}}"></input><br>
+                          <div class="text-danger text-left">
+                            {{$e}}
+                          </div>
+                          @endforeach
+                        </div>
+                        @else
+                          利用開始時間：<input type="time" class="mb-2" name="starttime" value="{{old('starttime')}}"></input><br>
+                        @endif
                       </div>
-                      @endforeach
                     </div>
-                    @else
-                      　利用開始時間：<input type="time" class="mb-2" name="starttime" value="{{old('starttime')}}"></input><br>
-                    @endif
 
-                    @if ($errors->has('finishdate'))
-                    <div>
-                      @foreach ($errors->get('finishdate') as $e)
-                      利用終了日：<input type="date" class="mb-0" name="finishdate" value="{{old('finishdate')}}"></input>
-                      <div class="text-danger text-left">
-                        {{$e}}
+                    <div class="row">
+                      <div style="width: 55%;">
+                        @if ($errors->has('finishdate'))
+                        <div>
+                          @foreach ($errors->get('finishdate') as $e)
+                          　利用終了日：<input type="date" class="mb-0" name="finishdate" value="{{old('finishdate')}}"></input>
+                          <div class="text-danger text-left">
+                            　{{$e}}
+                          </div>
+                          @endforeach
+                        </div>
+                        @else
+                          　利用終了日：<input type="date" class="mb-2" name="finishdate" value="{{old('finishdate')}}"></input>
+                        @endif
                       </div>
-                      @endforeach
-                    </div>
-                    @else
-                      利用終了日：<input type="date" class="mb-2" name="finishdate" value="{{old('finishdate')}}"></input>
-                    @endif
-
-                    @if ($errors->has('finishtime'))
-                    <div>
-                      @foreach ($errors->get('finishtime') as $e)
-                      　利用終了時間：<input type="time" class="mb-0" name="finishtime" value="{{old('finishtime')}}"></input><br>
-                      <div class="text-danger text-left">
-                        {{$e}}
+                      <div style="width: 45%;">
+                        @if ($errors->has('finishtime'))
+                        <div>
+                          @foreach ($errors->get('finishtime') as $e)
+                          利用終了時間：<input type="time" class="mb-0" name="finishtime" value="{{old('finishtime')}}"></input><br>
+                          <div class="text-danger text-left">
+                            {{$e}}
+                          </div>
+                          @endforeach
+                        </div>
+                        @else
+                          利用終了時間：<input type="time" class="mb-2" name="finishtime" value="{{old('finishtime')}}"></input><br>
+                        @endif
                       </div>
-                      @endforeach
                     </div>
-                    @else
-                      　利用終了時間：<input type="time" class="mb-2" name="finishtime" value="{{old('finishtime')}}"></input><br>
-                    @endif
 
                   </div>
 
@@ -504,306 +513,6 @@
                   <input class="btn btn-info text-dark" type="submit" value="投稿">
 
                 </div>
-
-
-
-                <style>/*
-                <!-- 利用開始日： -->
-                <div class="text-left mb-2">
-                  利用開始日：
-                  <select name="startyear" id="year">
-                    <option value="2018" selected="selected">2018</option>
-                    <option value="2019">2019</option>
-                    <option value="2020">2020</option>
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
-                  </select><label for="year">年</label>
-                  <select name="startmonth" id="month">
-                    <option value="01" selected="selected">1</option>
-                    <option value="02">2</option>
-                    <option value="03">3</option>
-                    <option value="04">4</option>
-                    <option value="05">5</option>
-                    <option value="06">6</option>
-                    <option value="07">7</option>
-                    <option value="08">8</option>
-                    <option value="09">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                  </select><label for="month">月</label>
-                  <select name="startday" id="day">
-                    <option value="01" selected="selected">1</option>
-                    <option value="02">2</option>
-                    <option value="03">3</option>
-                    <option value="04">4</option>
-                    <option value="05">5</option>
-                    <option value="06">6</option>
-                    <option value="07">7</option>
-                    <option value="08">8</option>
-                    <option value="09">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
-                    <option value="29">29</option>
-                    <option value="30">30</option>
-                    <option value="31">31</option>
-                  </select><label for="day">日　</label>
-                  <select name="starthour" id="hour">
-                    <option value="00" selected="selected">00</option>
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="07">07</option>
-                    <option value="08">08</option>
-                    <option value="09">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                  </select><label for="hour">時</label>
-                  <select name="startminutes" id="minutes">
-                    <option value="00" selected="selected">00</option>
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="07">07</option>
-                    <option value="08">08</option>
-                    <option value="09">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
-                    <option value="29">29</option>
-                    <option value="30">30</option>
-                    <option value="31">31</option>
-                    <option value="32">32</option>
-                    <option value="33">33</option>
-                    <option value="34">34</option>
-                    <option value="35">35</option>
-                    <option value="36">36</option>
-                    <option value="37">37</option>
-                    <option value="38">38</option>
-                    <option value="39">39</option>
-                    <option value="40">40</option>
-                    <option value="41">41</option>
-                    <option value="42">42</option>
-                    <option value="43">43</option>
-                    <option value="44">44</option>
-                    <option value="45">45</option>
-                    <option value="46">46</option>
-                    <option value="47">47</option>
-                    <option value="48">48</option>
-                    <option value="49">49</option>
-                    <option value="50">50</option>
-                    <option value="51">51</option>
-                    <option value="52">52</option>
-                    <option value="53">53</option>
-                    <option value="54">54</option>
-                    <option value="55">55</option>
-                    <option value="56">56</option>
-                    <option value="57">57</option>
-                    <option value="58">58</option>
-                    <option value="59">59</option>
-                  </select><label for="minutes">分</label>
-                </div>
-                <!--/. 利用開始日： -->
-
-                <!-- 利用終了日： -->
-                <div class="text-left mb-2">
-                  利用終了日：
-                  <select name="finishyear" id="year">
-                    <option value="2018" selected="selected">2018</option>
-                    <option value="2019">2019</option>
-                    <option value="2020">2020</option>
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
-                  </select><label for="year">年</label>
-                  <select name="finishmonth" id="month">
-                    <option value="01" selected="selected">1</option>
-                    <option value="02">2</option>
-                    <option value="03">3</option>
-                    <option value="04">4</option>
-                    <option value="05">5</option>
-                    <option value="06">6</option>
-                    <option value="07">7</option>
-                    <option value="08">8</option>
-                    <option value="09">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                  </select><label for="month">月</label>
-                  <select name="finishday" id="day">
-                    <option value="01" selected="selected">1</option>
-                    <option value="02">2</option>
-                    <option value="03">3</option>
-                    <option value="04">4</option>
-                    <option value="05">5</option>
-                    <option value="06">6</option>
-                    <option value="07">7</option>
-                    <option value="08">8</option>
-                    <option value="09">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
-                    <option value="29">29</option>
-                    <option value="30">30</option>
-                    <option value="31">31</option>
-                  </select><label for="day">日　</label>
-                  <select name="finishhour" id="hour">
-                    <option value="00" selected="selected">00</option>
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="07">07</option>
-                    <option value="08">08</option>
-                    <option value="09">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                  </select><label for="hour">時</label>
-                  <select name="finishminutes" id="minutes">
-                    <option value="00" selected="selected">00</option>
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="07">07</option>
-                    <option value="08">08</option>
-                    <option value="09">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
-                    <option value="29">29</option>
-                    <option value="30">30</option>
-                    <option value="31">31</option>
-                    <option value="32">32</option>
-                    <option value="33">33</option>
-                    <option value="34">34</option>
-                    <option value="35">35</option>
-                    <option value="36">36</option>
-                    <option value="37">37</option>
-                    <option value="38">38</option>
-                    <option value="39">39</option>
-                    <option value="40">40</option>
-                    <option value="41">41</option>
-                    <option value="42">42</option>
-                    <option value="43">43</option>
-                    <option value="44">44</option>
-                    <option value="45">45</option>
-                    <option value="46">46</option>
-                    <option value="47">47</option>
-                    <option value="48">48</option>
-                    <option value="49">49</option>
-                    <option value="50">50</option>
-                    <option value="51">51</option>
-                    <option value="52">52</option>
-                    <option value="53">53</option>
-                    <option value="54">54</option>
-                    <option value="55">55</option>
-                    <option value="56">56</option>
-                    <option value="57">57</option>
-                    <option value="58">58</option>
-                    <option value="59">59</option>
-                  </select><label for="minutes">分</label>
-                </div>
-                <!--/. 利用終了日： -->
-                */</style>
 
               </form>
 
