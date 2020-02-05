@@ -104,13 +104,6 @@
                   @else
                     <input type="text" class="form-control" name="address" value="{{ old('address', $goshops->address) }}"><!-- 入力あり -->
                   @endif
-                  @if ($errors->has('address'))
-                    @foreach ($errors->get('address') as $e)
-                      <div class="text-danger text-left">
-                        {{$e}}
-                      </div>
-                    @endforeach
-                  @endif
                 </div>
               </div>
 

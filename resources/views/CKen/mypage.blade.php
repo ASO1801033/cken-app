@@ -112,8 +112,8 @@
                   <input type="text" class="form-control mb-3" placeholder="ホームページ" name="homepage" value="{{old('homepage')}}">
                 @endif
 
-                <!-- Adress -->
-                <input type="text" class="form-control mb-3" placeholder="お店の住所" name="adress" value="{{old('adress')}}">
+                <!-- Address -->
+                <input type="text" class="form-control mb-3" placeholder="お店の住所" name="address" value="{{old('address')}}">
 
                 <!-- Memo -->
                 <div class="form-group">
@@ -141,7 +141,7 @@
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h6 class="modal-title" id="exampleModalLabel">CKén-マイページ(お店登録)</h6>
+                        <h6 class="modal-title" id="exampleModalLabel">CKén-マイページ</h6>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>

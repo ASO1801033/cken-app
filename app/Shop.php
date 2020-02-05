@@ -10,7 +10,7 @@ class Shop extends Model
     protected $guarded = ['id', 'user_id'];
 
     // 変更するかもしれないカラム
-    protected $fillable = ['shopname', 'homepage', 'adress', 'memo', 'flg'];
+    protected $fillable = ['shopname', 'homepage', 'address', 'memo', 'flg'];
 
     //外部キー(user_id)に対応するデータを取得するメソッド
     public function user() {

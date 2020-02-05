@@ -123,10 +123,10 @@
                 </tr>
                 <tr>
                   <th scope="row" class="text-right">住所</th>
-                  @if(empty($goshops->adress))
+                  @if(empty($goshops->address))
                     <td class="text-left" style="word-wrap:break-word;"><span style="background-color: #F7DD67;">未登録</span></td>
                   @else
-                    <td class="text-left" style="word-wrap:break-word;">{{ $goshops->adress }}</td>
+                    <td class="text-left" style="word-wrap:break-word;">{{ $goshops->address }}</td>
                   @endif
                 </tr>
                 <tr>
@@ -155,8 +155,8 @@
             <!--/. キャッチコピー -->
 
             <!-- マップの表示 -->
-            @if(isset($goshops->adress))
-              <iframe src="http://maps.google.co.jp/maps?&output=embed&q={{$goshops->adress}}" width="100%" height="400"></iframe>
+            @if(isset($goshops->address))
+              <iframe src="http://maps.google.co.jp/maps?&output=embed&q={{$goshops->address}}" width="100%" height="400"></iframe>
             @else
               <div class="text-danger">
                 ⚠︎住所が設定されていないためデフォルトを表示中です！

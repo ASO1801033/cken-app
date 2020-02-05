@@ -164,9 +164,24 @@ class CkenController extends Controller
         //shopnameに入力があれば更新
         $shop->shopname = $req->shopname;
       }
+      if(isset($req->homepage)) {
+        //homepageに入力があれば更新
+        $shop->homepage = $req->homepage;
+      }
+      if(isset($req->address)) {
+        //addressに入力があれば更新
+        $shop->address = $req->address;
+      }
+      //dd($req->address);
+      if(isset($req->memo)) {
+        //memoに入力があれば更新
+        $shop->memo = $req->memo;
+      }
+      /*
       $shop->homepage = $req->homepage;
-      $shop->adress = $req->adress;
+      $shop->address = $req->address;
       $shop->memo = $req->memo;
+      */
       $shop->save();
 
     //mypageへリダイレクトする

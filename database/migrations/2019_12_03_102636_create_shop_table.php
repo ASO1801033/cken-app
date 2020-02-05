@@ -19,7 +19,7 @@ class CreateShopTable extends Migration
           $table->foreign('user_id')->references('id')->on('users');
           $table->string('shopname');
           $table->string('homepage')->nullable();
-          $table->string('adress')->nullable();
+          $table->string('address')->nullable();
           $table->string('memo')->nullable();
           $table->integer('flg') -> default(0);
           $table->timestamps();
