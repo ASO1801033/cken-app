@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+editnews<!DOCTYPE html>
 @extends('layouts.app')
 <html lang="en">
 
@@ -76,12 +76,12 @@
                 </p>
                 <!--/. キャッチコピー -->
 
-                @if (count($edit) == 0)
+                @if (count($editnews) == 0)
                   <div class="mt-3">投稿されたお知らせはありません</div>
                 @else
                   <div class="row">
                     <div class="col-md-12">
-                      <table class="table table-striped">
+                      <table class="table table-striped text-center">
                         <thead>
                           <tr>
                             <th scope="col"><big>日付</big></th>
@@ -91,14 +91,14 @@
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach ($edit as $cont)
+                          @foreach ($editnews as $cont)
                             <tr>
                               <th scope="row" class="align-middle">
                                 {{ $cont->updated_at->format('Y/m/d') }}
                               </th>
                               <td class="align-middle"><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->newstitle }}</u></a></td>
-                              <td class="align-middle"><a class="btn btn-info text-dark" href="{{ route('editretouch', $cont->id) }}" role="button">修正</a></td>
-                              <td class="align-middle"><input type="checkbox" name="chkDelete[]" value="{{ $cont->id }}"></td>
+                              <td class="align-middle"><a class="btn btn-info text-dark" href="{{ route('editnewsretouch', $cont->id) }}" role="button">修正</a></td>
+                              <td class="align-middle"><input type="checkbox" name="chknewsDelete[]" value="{{ $cont->id }}"></td>
                             </tr>
                           @endforeach
                         </tbody>
@@ -136,7 +136,7 @@
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="coupon">
 
               <!-- Default form subscription -->
-              <form class="text-center p-3" action="https://www.google.co.jp" method="post">
+              <form class="text-center p-3" action="{{ route('couponeditdelete') }}" method="post">
                 {{ csrf_field() }}
 
                 <!-- キャッチコピー -->
@@ -145,7 +145,60 @@
                 </p>
                 <!--/. キャッチコピー -->
 
-              </form>
+                @if (count($editcoupon) == 0)
+                  <div class="mt-3">投稿されたクーポンはありません</div>
+                @else
+                  <div class="row">
+                    <div class="col-md-12">
+                      <table class="table table-striped text-center">
+                        <thead>
+                          <tr>
+                            <th scope="col"><big>日付</big></th>
+                            <th scope="col"><big>タイトル</big></th>
+                            <th scope="col"><big>修正</big></th>
+                            <th scope="col"><big>削除</big></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          @foreach ($editcoupon as $cont)
+                            <tr>
+                              <th scope="row" class="align-middle">
+                                {{ $cont->updated_at->format('Y/m/d') }}
+                              </th>
+                              <td class="align-middle"><a href="#" target="_blank"><u class="text-primary">{{ $cont->coupontitle }}</u></a></td>
+                              <td class="align-middle"><a class="btn btn-info text-dark" href="{{ route('editcouponretouch', $cont->id) }}" role="button">修正</a></td>
+                              <td class="align-middle"><input type="checkbox" name="chkcouponDelete[]" value="{{ $cont->id }}"></td>
+                            </tr>
+                          @endforeach
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <button class="btn btn-success text-dark" type="button" data-toggle="modal" data-target="#basicExampleModal">チェックした投稿を削除する</button>
+                @endif
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">CKén-マイページ</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          本当に削除しますか？
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-success" data-dismiss="modal">いいえ</button>
+                          <input type="submit" class="btn btn-info" value="削除する">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
               <!-- Default form subscription -->
 
             </div>

@@ -246,29 +246,50 @@ class CkenController extends Controller
 
   //お店側の情報修正一覧のページ
   public function edit(Request $req) {
-    $editdata = News::orderBy('updated_at', 'desc')->where('user_id', $req->user()->id)->get();
+    $editnewsdata = News::orderBy('updated_at', 'desc')->where('user_id', $req->user()->id)->get();
+    $editcoupondata = Coupon::orderBy('updated_at', 'desc')->where('user_id', $req->user()->id)->get();
 
     // テンプレートへ渡す情報を作成する。
     $editdata = [
-        'edit' => $editdata
+        'editnews' => $editnewsdata,
+        'editcoupon' => $editcoupondata
     ];
     return view('cken.edit', $editdata);
   }
 
-  //修正ページのアクション
-  public function editretouch($id) {
+  //お知らせ修正ページのアクション
+  public function editnewsretouch($id) {
     $newseditdata = News::find($id);
 
     // テンプレートへ渡す情報を作成する。
     $newseditdata = [
         'editdata' => $newseditdata
     ];
-    return view('cken.editretouch', $newseditdata);
+    return view('cken.editnewsretouch', $newseditdata);
   }
 
-  //修正ページ 削除するボタンを押した時の処理
+  //クーポン修正ページのアクション
+  public function editcouponretouch($id) {
+    $couponeditdata = Coupon::find($id);
+
+    // テンプレートへ渡す情報を作成する。
+    $couponeditdata = [
+        'editdata' => $couponeditdata
+    ];
+    return view('cken.editcouponretouch', $couponeditdata);
+  }
+
+  //お知らせを削除するボタンを押した時の処理
   public function newseditdelete(Request $req) {
-    News::destroy($req->chkDelete);
+    News::destroy($req->chknewsDelete);
+
+    //mypage/editへリダイレクトする
+    return redirect('cken/mypage/edit');
+  }
+
+  //お知らせを削除するボタンを押した時の処理
+  public function couponeditdelete(Request $req) {
+    Coupon::destroy($req->chkcouponDelete);
 
     //mypage/editへリダイレクトする
     return redirect('cken/mypage/edit');

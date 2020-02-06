@@ -4,7 +4,7 @@
 
   <head>
     @section('head')
-    @section('title', 'CKén-内容修正')
+    @section('title', 'CKén-お知らせ内容修正')
   </head>
 
   <body>
@@ -57,10 +57,6 @@
             <a class="nav-link active" id="news" data-toggle="tab" href="#home" role="tab" aria-controls="home"
               aria-selected="true">お知らせ修正</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" id="coupon" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-              aria-selected="false">クーポン修正</a>
-          </li>
         </ul>
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="news">
@@ -97,22 +93,6 @@
                 </a>
                 <button type="submit" class="btn btn-info text-dark">実行する</button>
               </div>
-
-            </form>
-            <!-- Default form subscription -->
-
-          </div>
-          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="coupon">
-
-            <!-- Default form subscription -->
-            <form class="text-center p-3" action="#" method="post">
-              {{ csrf_field() }}
-
-              <!-- キャッチコピー -->
-              <p class="catch-copy mt-3">
-                内容の修正
-              </p>
-              <!--/. キャッチコピー -->
 
             </form>
             <!-- Default form subscription -->

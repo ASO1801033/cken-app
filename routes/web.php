@@ -64,11 +64,17 @@ Route::get ('/cken/mypage/coupon', 'CKenController@coupon_user') -> middleware('
 //お店側の情報修正一覧ページのルート情報
 Route::get ('/cken/mypage/edit', 'CKenController@edit') -> middleware('auth')->name('edit'); //edit.blade.php
 
-//お店側の情報修正ページのルート情報
-Route::get ('/cken/mypage/editretouch/{id}', 'CKenController@editretouch') -> middleware('auth')->name('editretouch'); //editretouch.blade.php
+//お店側のお知らせ情報修正ページのルート情報
+Route::get ('/cken/mypage/editnewsretouch/{id}', 'CKenController@editnewsretouch') -> middleware('auth')->name('editnewsretouch'); //editnewsretouch.blade.php
 
-//お店側の情報修正ページ 削除するボタンを押した時
+//お店側のクーポン情報修正ページのルート情報
+Route::get ('/cken/mypage/editcouponretouch/{id}', 'CKenController@editcouponretouch') -> middleware('auth')->name('editcouponretouch'); //editcouponretouch.blade.php
+
+//お店側の情報修正ページ お知らせを削除するボタンを押した時
 Route::post ('/cken/mypage/delete', 'CKenController@newseditdelete') -> middleware('auth')->name('newseditdelete'); //edit.blade.php
+
+//お店側の情報修正ページ クーポンを削除するボタンを押した時
+Route::post ('/cken/mypage/delete', 'CKenController@couponeditdelete') -> middleware('auth')->name('couponeditdelete'); //edit.blade.php
 
 //お店側のお知らせ・クーポンの内容修正ページ 実行するボタンを押した時
 Route::post ('/cken/mypage/editretouch/{id}/update', 'CKenController@editupdate') -> middleware('auth')->name('editupdate'); //retouch.blade.php
