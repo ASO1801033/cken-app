@@ -131,17 +131,17 @@
                 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
                 <script>
                   $(window).load(function() {
-                  $('#modal_box').modal('show');
+                  $('#modal_box1').modal('show');
                   });
                 </script>
 
                 <!-- モーダルウィンドウの中身 -->
-                <div class="modal fade" id="modal_box" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                <div class="modal fade" id="modal_box1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
                   aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h6 class="modal-title" id="exampleModalLabel">CKén-マイページ</h6>
+                        <h6 class="modal-title" id="exampleModalLabel1">CKén-マイページ(行きたいお店登録)</h6>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -376,17 +376,17 @@
                 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
                 <script>
                   $(window).load(function() {
-                  $('#modal_box').modal('show');
+                  $('#modal_box2').modal('show');
                   });
                 </script>
 
                 <!-- モーダルウィンドウの中身 -->
-                <div class="modal fade" id="modal_box" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                <div class="modal fade" id="modal_box2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
                   aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h6 class="modal-title" id="exampleModalLabel">CKén-マイページ</h6>
+                        <h6 class="modal-title" id="exampleModalLabel2">CKén-マイページ(お知らせ投稿)</h6>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -521,17 +521,17 @@
                 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
                 <script>
                   $(window).load(function() {
-                  $('#modal_box').modal('show');
+                  $('#modal_box3').modal('show');
                   });
                 </script>
 
                 <!-- モーダルウィンドウの中身 -->
-                <div class="modal fade" id="modal_box" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                <div class="modal fade" id="modal_box3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
                   aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h6 class="modal-title" id="exampleModalLabel">CKén-マイページ</h6>
+                        <h6 class="modal-title" id="exampleModalLabel3">CKén-マイページ3</h6>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
