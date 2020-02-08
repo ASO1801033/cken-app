@@ -367,12 +367,11 @@
 
                 <!-- Register in button -->
                 <input class="btn btn-info text-dark" type="submit" value="投稿">
-
               </form>
               <!-- Default form subscription -->
 
               <!-- 登録完了メッセージの表示 -->
-              @if(Session::has('flashmessage'))
+              @if(Session::has('flashmessage1'))
                 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
                 <script>
                   $(window).load(function() {
@@ -392,7 +391,7 @@
                         </button>
                       </div>
                       <div class="modal-body">
-                        {{ session('flashmessage') }}
+                        {{ session('flashmessage1') }}
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-info" data-dismiss="modal">閉じる</button>
@@ -403,9 +402,11 @@
                 <!-- モーダルウィンドウの中身 -->
               @endif
               <!-- 登録完了メッセージの表示 -->
-
             </div>
+
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="coupon">
+
+              <!-- Default form subscription -->
               <form class="text-center p-3" action="{{ route('couponreg') }}" method="post">
                 {{ csrf_field() }}
 
@@ -506,18 +507,16 @@
                         @endif
                       </div>
                     </div>
-
                   </div>
 
                   <!-- Register in button -->
                   <input class="btn btn-info text-dark" type="submit" value="投稿">
-
                 </div>
-
               </form>
+              <!-- Default form subscription -->
 
               <!-- 登録完了メッセージの表示 -->
-              @if(Session::has('flashmessage'))
+              @if(Session::has('flashmessage2'))
                 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
                 <script>
                   $(window).load(function() {
@@ -531,13 +530,13 @@
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h6 class="modal-title" id="exampleModalLabel3">CKén-マイページ3</h6>
+                        <h6 class="modal-title" id="exampleModalLabel3">CKén-マイページ(お知らせ投稿)</h6>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
                       <div class="modal-body">
-                        {{ session('flashmessage') }}
+                        {{ session('flashmessage2') }}
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-info" data-dismiss="modal">閉じる</button>
@@ -548,8 +547,8 @@
                 <!-- モーダルウィンドウの中身 -->
               @endif
               <!-- 登録完了メッセージの表示 -->
-
             </div>
+
           </div>
         </div>
       </div>

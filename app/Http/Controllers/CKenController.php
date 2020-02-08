@@ -111,7 +111,7 @@ class CkenController extends Controller
       $news->fill($form)->save();
 
       // テンプレート(resources/views/cken/mypage.blade.php)を表示
-      return redirect('/cken/mypage')->with('flashmessage', 'お知らせの投稿が出来ました！');
+      return redirect('/cken/mypage')->with('flashmessage1', 'お知らせの投稿が出来ました！');
   }
 
   //企業ユーザークーポン投稿ボタンを押した時の処理
@@ -124,7 +124,7 @@ class CkenController extends Controller
       $coupon->fill($form)->save();
 
       // テンプレート(resources/views/cken/mypage.blade.php)を表示
-      return redirect('/cken/mypage')->with('flashmessage', 'クーポンの投稿が出来ました！');
+      return redirect('/cken/mypage')->with('flashmessage2', 'クーポンの投稿が出来ました！');
   }
 
   //行きたいお店リストの詳細ボタンを押した時の処理
