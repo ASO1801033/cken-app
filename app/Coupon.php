@@ -10,7 +10,11 @@ class Coupon extends Model
     protected $guarded = ['id', 'user_id'];
 
     // 変更するかもしれないカラム
-  protected $fillable = ['contents', 'coupontitle', 'startdate', 'starttime', 'finishdate', 'finishtime', 'flg'];
+    protected $fillable = ['contents', 'coupontitle', 'startdate', 'starttime', 'finishdate', 'finishtime', 'flg'];
+
+    protected $dates = [
+        'startdate', 'finishdate'
+    ];
 
     //外部キー(user_id)に対応するデータを取得するメソッド
     public function user() {

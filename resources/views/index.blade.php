@@ -213,7 +213,7 @@
                 </div>
               </div>
 
-              <!-- 直近のお知らせ -->
+              <!-- クーポン -->
               @if (count($coupon) == 0)
                 <div class="mt-3">投稿されたクーポンはありません</div>
               @else
@@ -234,7 +234,7 @@
                               <!--<th scope="row">{{ $cont->created_at->format('Y/m/d H:m:s') }}</th>-->
                               <th scope="row">{{ $cont->updated_at->format('Y/m/d') }}</th>
                               <td>{{ $cont->user->name }}</td>
-                              <td><a href="#" target="_blank"><u class="text-primary">{{ $cont->coupontitle }}</u></a></td>
+                              <td><a href="{{ route('coupondetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->coupontitle }}</u></a></td>
                             </tr>
                           @endforeach
                           <tr>
@@ -248,7 +248,7 @@
                               <!--<th scope="row">{{ $cont->created_at->format('Y-m-d') }}</th>-->
                               <th scope="row">{{ $cont->updated_at->format('Y/m/d') }}</th>
                               <td>{{ $cont->user->name }}</td>
-                              <td><a href="#" target="_blank"><u class="text-primary">{{ $cont->coupontitle }}</u></a></td>
+                              <td><a href="{{ route('coupondetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->coupontitle }}</u></a></td>
                             </tr>
                           @endforeach
                         @endif

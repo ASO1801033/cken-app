@@ -60,6 +60,17 @@ class CkenController extends Controller
     return view('cken.newsmore', $newsdata);
   }
 
+  //クーポン詳細ページのアクション
+  public function coupondetail($id) {
+    $detaildata = Coupon::find($id);
+
+    // テンプレートへ渡す情報を作成する。
+    $detaildata = [
+        'detail' => $detaildata
+    ];
+    return view('cken.coupondetail', $detaildata);
+  }
+
   //企業ページのアクション
   public function office() {
     // テンプレート(resources/views/cken/mypage.blade.php)を表示
