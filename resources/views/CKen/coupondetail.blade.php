@@ -91,8 +91,36 @@
       <h5 class="mb-3">日付<br>▶︎{{ $detail->updated_at->format('Y/m/d') }}</h5>
       <h5 class="mb-3">タイトル<br>▶︎{{ $detail->coupontitle }}</h5>
       <h5 class="mb-3">クーポン内容<br>▶︎{{ $detail->contents }}</h5>
-      <h5 class="mb-3">利用開始日時<br>▶︎{{ $detail->startdate->format('Y/m/d/l') }}　{{ $detail->starttime }}</h5>
-      <h5 class="mb-3">利用終了日時<br>▶︎{{ $detail->finishdate->format('Y/m/d/l') }}　{{ $detail->finishtime }}</h5>
+      <h5 class="mb-3">利用開始日時<br>
+        ▶︎{{ $detail->startdate->format('Y/m/d') }}
+        (@php
+          $wday = mb_substr($detail->startdate->format('Y/m/d (l)'), 12, 3);
+          switch($wday){
+            case "Sun": echo "日"; break;
+            case "Mon": echo "月"; break;
+            case "Tue": echo "火"; break;
+            case "Wed": echo "水"; break;
+            case "Thu": echo "木"; break;
+            case "Fri": echo "金"; break;
+            case "Sat": echo "土"; break;
+          }
+        @endphp)　{{ $detail->starttime }}
+      </h5>
+      <h5 class="mb-3">利用終了日時<br>
+        ▶︎{{ $detail->finishdate->format('Y/m/d') }}
+        (@php
+          $wday = mb_substr($detail->finishdate->format('Y/m/d (l)'), 12, 3);
+          switch($wday){
+            case "Sun": echo "日"; break;
+            case "Mon": echo "月"; break;
+            case "Tue": echo "火"; break;
+            case "Wed": echo "水"; break;
+            case "Thu": echo "木"; break;
+            case "Fri": echo "金"; break;
+            case "Sat": echo "土"; break;
+          }
+        @endphp)　{{ $detail->finishtime }}
+      </h5>
 
       <!-- クーポン詳細を閉じるボタン -->
       <form class="text-center" style="margin-bottom:78px;">
