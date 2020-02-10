@@ -98,7 +98,19 @@
         <tbody>
           @foreach ($news as $cont)
             <tr>
-              <th scope="row">{{ $cont->updated_at->format('Y/m/d') }}</th>
+              <th scope="row">{{ $cont->updated_at->format('Y/m/d') }}
+                (@php
+                $wday = mb_substr($cont->updated_at->format('Y/m/d (l)'), 12, 3);
+                switch($wday){
+                  case "Sun": echo "日"; break;
+                  case "Mon": echo "月"; break;
+                  case "Tue": echo "火"; break;
+                  case "Wed": echo "水"; break;
+                  case "Thu": echo "木"; break;
+                  case "Fri": echo "金"; break;
+                  case "Sat": echo "土"; break;
+                }
+              @endphp)</th>
               <td>{{ $cont->user->name }}</td>
               <td><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->newstitle }}</u></a></td>
             </tr>
