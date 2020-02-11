@@ -23,7 +23,7 @@ Route::get ('/cken/newsdetail/{id}', 'CKenController@newsdetail')->name('newsdet
 Route::get ('/cken/newsmore', 'CKenController@newsmore')->name('newsmore'); //newsmore.blade.php
 
 //企業ユーザーマイページのルート情報(ログインした人しか入られない)
-Route::get ('/cken/mypage', 'CKenController@office') -> middleware('auth'); //mypage.blade.php
+//Route::get ('/cken/mypage', 'CKenController@office') -> middleware('auth'); //mypage.blade.php
 
 //一般ユーザーマイページのルート情報(ログインした人しか入られない)
 Route::get ('/cken/mypage', 'CKenController@mypage') -> middleware('auth'); //mypage.blade.php

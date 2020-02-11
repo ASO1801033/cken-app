@@ -35,6 +35,7 @@ class CkenController extends Controller
         'coupon' => $coupondata,
         'coupon_5' => $coupondata_5
     ];
+    \Log::info('トップページ表示'); //ログにメッセージを反映させる
     return view('index', $newsdata, $coupondata);
   }
 
@@ -46,6 +47,7 @@ class CkenController extends Controller
     $detaildata = [
         'detail' => $detaildata
     ];
+    \Log::info('お知らせ詳細ページ表示'); //ログにメッセージを反映させる
     return view('cken.newsdetail', $detaildata);
   }
 
@@ -57,6 +59,7 @@ class CkenController extends Controller
     $newsdata = [
         'news' => $newsdata
     ];
+    \Log::info('お知らせをもっと見るページ表示'); //ログにメッセージを反映させる
     return view('cken.newsmore', $newsdata);
   }
 
@@ -68,14 +71,15 @@ class CkenController extends Controller
     $detaildata = [
         'detail' => $detaildata
     ];
+    \Log::info('クーポン詳細ページ表示'); //ログにメッセージを反映させる
     return view('cken.coupondetail', $detaildata);
   }
 
   //企業ページのアクション
-  public function office() {
+  /*public function office() {
     // テンプレート(resources/views/cken/mypage.blade.php)を表示
     return view('cken.mypage');
-  }
+  }*/
 
   //一般ユーザーマイページのアクション
   public function mypage(Request $req) {
@@ -95,6 +99,7 @@ class CkenController extends Controller
         'wentshops' => $shopdata
     ];
 
+    \Log::info('マイページ表示'); //ログにメッセージを反映させる
     // テンプレート(resources/views/cken/mypage.blade.php)を表示
     return view('cken.mypage', $godata, $wentdata);
   }
@@ -108,6 +113,7 @@ class CkenController extends Controller
       $shop->timestamps = false; //登録時にupdated_atカラムへのタイムスタンプを無効にする
       $shop->fill($form)->save();
 
+      \Log::info('一般ユーザー：行きたいお店登録ボタン押下→登録実行'); //ログにメッセージを反映させる
       // テンプレート(resources/views/cken/mypage.blade.php)を表示
       return redirect('/cken/mypage')->with('flashmessage', '行きたいお店の登録が出来ました！');
   }
@@ -121,6 +127,7 @@ class CkenController extends Controller
       $news->timestamps;
       $news->fill($form)->save();
 
+      \Log::info('企業ユーザー：お知らせ投稿ボタン押下→登録実行'); //ログにメッセージを反映させる
       // テンプレート(resources/views/cken/mypage.blade.php)を表示
       return redirect('/cken/mypage')->with('flashmessage1', 'お知らせの投稿が出来ました！');
   }
@@ -134,6 +141,7 @@ class CkenController extends Controller
       $coupon->timestamps;
       $coupon->fill($form)->save();
 
+      \Log::info('企業ユーザー：クーポン投稿ボタン押下→登録実行'); //ログにメッセージを反映させる
       // テンプレート(resources/views/cken/mypage.blade.php)を表示
       return redirect('/cken/mypage')->with('flashmessage2', 'クーポンの投稿が出来ました！');
   }
@@ -148,11 +156,12 @@ class CkenController extends Controller
         'goshops' => $shopdata
     ];
 
+    \Log::info('一般ユーザー：行きたいお店リストの詳細ページ表示'); //ログにメッセージを反映させる
     // テンプレート(resources/views/cken/goshopinfo.blade.php)を表示
     return view('cken.goshopinfo', $godata);
   }
 
-  //お店詳細の更新・削除ボタンを押した時の処理
+  //お店詳細の更新ボタンを押した時の処理
   public function retouch($id) {
     //お店を取得しておくviewの引数にデータの変数を渡す
     $shopdata = Shop::find($id);
@@ -162,11 +171,12 @@ class CkenController extends Controller
         'goshops' => $shopdata
     ];
 
+    \Log::info('一般ユーザー：お店情報修正ページ表示'); //ログにメッセージを反映させる
     // テンプレート(resources/views/cken/retouch.blade.php)を表示
     return view('cken.retouch', $godata);
   }
 
-  //お店詳細の更新・削除実行ボタンを押した時の処理
+  //お店情報修正ページの実行するボタンを押した時の処理
   public function update(UpdateRequest $req, $id) {
     //お店を取得しておくviewの引数にデータの変数を渡す
     $shop = Shop::find($id);
@@ -175,17 +185,25 @@ class CkenController extends Controller
         //shopnameに入力があれば更新
         $shop->shopname = $req->shopname;
       }
+
       if(isset($req->homepage)) {
         //homepageに入力があれば更新
         $shop->homepage = $req->homepage;
+      }else{
+        $shop->homepage = $req->homepage;
       }
+
       if(isset($req->address)) {
         //addressに入力があれば更新
         $shop->address = $req->address;
+      }else{
+        $shop->address = $req->address;
       }
-      //dd($req->address);
+
       if(isset($req->memo)) {
         //memoに入力があれば更新
+        $shop->memo = $req->memo;
+      }else{
         $shop->memo = $req->memo;
       }
       /*
@@ -195,6 +213,7 @@ class CkenController extends Controller
       */
       $shop->save();
 
+    \Log::info('一般ユーザー：お店情報修正実行するボタン押下→更新実行'); //ログにメッセージを反映させる
     //mypageへリダイレクトする
     return redirect('/cken/mypage');
   }
@@ -208,6 +227,7 @@ class CkenController extends Controller
     $shop->flg = 1;
     $shop->save();
 
+    \Log::info('一般ユーザー：行った！ボタン押下→flgを0から1に変更'); //ログにメッセージを反映させる
     //mypageへリダイレクトする
     return redirect('/cken/mypage');
   }
@@ -222,6 +242,7 @@ class CkenController extends Controller
         'goshops' => $shopdata
     ];
 
+    \Log::info('一般ユーザー：行ったお店リストの詳細ページ表示'); //ログにメッセージを反映させる
     // テンプレート(resources/views/cken/wentshopinfo.blade.php)を表示
     return view('cken.wentshopinfo', $wentdata);
   }
@@ -235,6 +256,7 @@ class CkenController extends Controller
     $shop->flg = 0;
     $shop->save();
 
+    \Log::info('一般ユーザー：行っとらんボタン押下→flgを1から0に変更'); //ログにメッセージを反映させる
     //mypageへリダイレクトする
     return redirect('/cken/mypage');
   }
@@ -242,9 +264,9 @@ class CkenController extends Controller
   //ゴミ箱ボタンを押した時の処理
   public function deletebutton($id) {
     $shop = Shop::find($id);
-
     $shop->delete();
 
+    \Log::info('一般ユーザー：ゴミ箱ボタン押下→削除実行'); //ログにメッセージを反映させる
     //mypageへリダイレクトする
     return redirect('/cken/mypage');
   }
@@ -265,6 +287,8 @@ class CkenController extends Controller
         'editnews' => $editnewsdata,
         'editcoupon' => $editcoupondata
     ];
+
+    \Log::info('企業ユーザー：情報修正一覧ページ表示'); //ログにメッセージを反映させる
     return view('cken.edit', $editdata);
   }
 
@@ -276,6 +300,8 @@ class CkenController extends Controller
     $newseditdata = [
         'editdata' => $newseditdata
     ];
+
+    \Log::info('企業ユーザー：お知らせ情報修正ページ表示'); //ログにメッセージを反映させる
     return view('cken.editnewsretouch', $newseditdata);
   }
 
@@ -287,6 +313,8 @@ class CkenController extends Controller
     $couponeditdata = [
         'editdata' => $couponeditdata
     ];
+
+    \Log::info('企業ユーザー：クーポン情報修正ページ表示'); //ログにメッセージを反映させる
     return view('cken.editcouponretouch', $couponeditdata);
   }
 
@@ -294,14 +322,16 @@ class CkenController extends Controller
   public function newseditdelete(Request $req) {
     News::destroy($req->chknewsDelete);
 
+    \Log::info('企業ユーザー：お知らせを削除するボタン押下→削除実行'); //ログにメッセージを反映させる
     //mypage/editへリダイレクトする
     return redirect('cken/mypage/edit');
   }
 
-  //お知らせを削除するボタンを押した時の処理
+  //クーポンを削除するボタンを押した時の処理
   public function couponeditdelete(Request $req) {
     Coupon::destroy($req->chkcouponDelete);
 
+    \Log::info('企業ユーザー：クーポンを削除するボタン押下→削除実行'); //ログにメッセージを反映させる
     //mypage/editへリダイレクトする
     return redirect('cken/mypage/edit');
   }
@@ -311,17 +341,18 @@ class CkenController extends Controller
     //お店を取得しておくviewの引数にデータの変数を渡す
     $newsdata = News::find($id);
 
-      if(isset($req->newstitle)) {
-        //newstitleに入力があれば更新
-        $newsdata->newstitle = $req->newstitle;
-      }
+    if(isset($req->newstitle)) {
+      //newstitleに入力があれば更新
+      $newsdata->newstitle = $req->newstitle;
+    }
 
-      if(isset($req->news)) {
-        //newsに入力があれば更新
-        $newsdata->news = $req->news;
-      }
-      $newsdata->save();
+    if(isset($req->news)) {
+      //newsに入力があれば更新
+      $newsdata->news = $req->news;
+    }
+    $newsdata->save();
 
+    \Log::info('企業ユーザー：お知らせ情報修正実行するボタン押下→更新実行'); //ログにメッセージを反映させる
     //mypage/editへリダイレクトする
     return redirect('/cken/mypage/edit');
   }
