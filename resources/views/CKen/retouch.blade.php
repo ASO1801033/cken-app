@@ -112,16 +112,9 @@
 
                 <div class="col-md-12">
                   @if(empty($goshops->memo))
-                    <textarea class="form-control" rows="5" name="memo" placeholder="未登録" value="{{ old('memo', $goshops->memo) }}"></textarea><!-- 入力なし -->
+                    <textarea class="form-control" rows="5" name="memo" placeholder="未登録"></textarea><!-- 入力なし -->
                   @else
-                    <textarea class="form-control" rows="5" name="memo" value="{{ old('memo', $goshops->memo) }}"></textarea><!-- 入力あり -->
-                  @endif
-                  @if ($errors->has('memo'))
-                    @foreach ($errors->get('memo') as $e)
-                      <div class="text-danger text-left">
-                        {{$e}}
-                      </div>
-                    @endforeach
+                    <textarea class="form-control" rows="5" name="memo">{{ $goshops->memo }}</textarea><!-- 入力あり -->
                   @endif
                 </div>
               </div>
