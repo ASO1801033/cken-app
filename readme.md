@@ -5,6 +5,6 @@
 <li>企業ユーザーはお知らせやクーポンの投稿・管理が出来る！</li>
 
 <h1>CKén</h1>
-<h2>This Webapplication's overview</h2>
+<h2>Web applications overview</h2>
 <li>General users can register and manage shops they want to go to!</li>
 <li>Corporate users can post and manage announcements and coupons!</li>
