@@ -127,7 +127,7 @@
               <!-- Default form subscription -->
 
               <!-- 登録完了メッセージの表示 -->
-              @if(Session::has('flashmessage'))
+              @if(Session::has('flashmessage1'))
                 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
                 <script>
                   $(window).load(function() {
@@ -147,7 +147,7 @@
                         </button>
                       </div>
                       <div class="modal-body">
-                        {{ session('flashmessage') }}
+                        {{ session('flashmessage1') }}
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-info" data-dismiss="modal">閉じる</button>
@@ -370,38 +370,11 @@
               </form>
               <!-- Default form subscription -->
 
-              <!-- 登録完了メッセージの表示 -->
-              @if(Session::has('flashmessage1'))
-                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-                <script>
-                  $(window).load(function() {
-                  $('#modal_box2').modal('show');
-                  });
-                </script>
-
-                <!-- モーダルウィンドウの中身 -->
-                <div class="modal fade" id="modal_box2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
-                  aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h6 class="modal-title" id="exampleModalLabel2">CKén-マイページ(お知らせ投稿)</h6>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        {{ session('flashmessage1') }}
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-info" data-dismiss="modal">閉じる</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- モーダルウィンドウの中身 -->
+              @if(Session::has('flash_message'))
+              <div class="flash_message">
+                {!! Session::get('flash_message') !!}
+              </div>
               @endif
-              <!-- 登録完了メッセージの表示 -->
             </div>
 
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="coupon">
@@ -516,7 +489,7 @@
               <!-- Default form subscription -->
 
               <!-- 登録完了メッセージの表示 -->
-              @if(Session::has('flashmessage2'))
+              @if(Session::has('flashmessage3'))
                 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
                 <script>
                   $(window).load(function() {
@@ -530,13 +503,13 @@
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h6 class="modal-title" id="exampleModalLabel3">CKén-マイページ(お知らせ投稿)</h6>
+                        <h6 class="modal-title" id="exampleModalLabel3">CKén-マイページ(クーポン投稿)</h6>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
                       <div class="modal-body">
-                        {{ session('flashmessage2') }}
+                        {{ session('flashmessage3') }}
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-info" data-dismiss="modal">閉じる</button>

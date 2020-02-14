@@ -115,7 +115,7 @@ class CkenController extends Controller
 
       \Log::info('一般ユーザー：行きたいお店登録ボタン押下→登録実行'); //ログにメッセージを反映させる
       // テンプレート(resources/views/cken/mypage.blade.php)を表示
-      return redirect('/cken/mypage')->with('flashmessage', '行きたいお店の登録が出来ました！');
+      return redirect('/cken/mypage')->with('flashmessage1', '行きたいお店の登録が出来ました！');
   }
 
   //企業ユーザーお知らせ投稿ボタンを押した時の処理
@@ -128,8 +128,9 @@ class CkenController extends Controller
       $news->fill($form)->save();
 
       \Log::info('企業ユーザー：お知らせ投稿ボタン押下→登録実行'); //ログにメッセージを反映させる
+      \Session::flash('flash_message', 'お知らせの投稿が出来ました！');
       // テンプレート(resources/views/cken/mypage.blade.php)を表示
-      return redirect('/cken/mypage')->with('flashmessage1', 'お知らせの投稿が出来ました！');
+      return redirect('/cken/mypage');
   }
 
   //企業ユーザークーポン投稿ボタンを押した時の処理
@@ -143,7 +144,7 @@ class CkenController extends Controller
 
       \Log::info('企業ユーザー：クーポン投稿ボタン押下→登録実行'); //ログにメッセージを反映させる
       // テンプレート(resources/views/cken/mypage.blade.php)を表示
-      return redirect('/cken/mypage')->with('flashmessage2', 'クーポンの投稿が出来ました！');
+      return redirect('/cken/mypage')->with('flashmessage3', 'クーポンの投稿が出来ました！');
   }
 
   //行きたいお店リストの詳細ボタンを押した時の処理
