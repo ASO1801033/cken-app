@@ -30,6 +30,7 @@ class CouponRequest extends FormRequest
         'finishdate' => 'required',
         'finishtime' => 'required',
       ];
+      //利用開始日時<利用終了日時のバリデーションを作成する
 
       return $validate_rule;
     }
@@ -44,6 +45,6 @@ class CouponRequest extends FormRequest
         'finishtime.required' => '利用終了時間は必須入力です！',
       ];
 
-      return $msg; // 忘れずに!
+      return $msg; // 忘れずに!
     }
 }
