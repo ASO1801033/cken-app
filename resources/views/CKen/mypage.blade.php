@@ -521,29 +521,34 @@
 
               <!--モーダルを入れる↓-->
               @if(Session::has('flash_message2'))
-              <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-              <script>
-                $(window).load(function() {
-                $('#myModal2').modal('show');
-                });
-              </script>
+                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+                <script>
+                  $(window).load(function() {
+                  $('#modal_box1').modal('show');
+                  });
+                </script>
 
-              <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="label" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body text-center">
-                      {{ session('flash_message2') }}
-                    </div>
-                    <div class="modal-footer text-center">
+                <!-- モーダルウィンドウの中身 -->
+                <div class="modal fade" id="modal_box1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h6 class="modal-title" id="exampleModalLabel1">CKén-マイページ</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        {{ session('flash_message2') }}
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">閉じる</button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+                <!-- モーダルウィンドウの中身 -->
               @endif
               <!--モーダルを入れる↑-->
 
