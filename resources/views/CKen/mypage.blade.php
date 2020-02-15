@@ -323,6 +323,8 @@
             </li>
           </ul>
           <div class="tab-content" id="myTabContent">
+
+            <!-- お知らせ投稿↓ -->
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="news">
 
               <!-- Default form subscription -->
@@ -370,13 +372,39 @@
               </form>
               <!-- Default form subscription -->
 
-              @if(Session::has('flash_message'))
-              <div class="flash_message">
-                {!! Session::get('flash_message') !!}
+
+              <!--モーダルを入れる↓-->
+              @if(Session::has('flash_message1'))
+              <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+              <script>
+                $(window).load(function() {
+                $('#myModal').modal('show');
+                });
+              </script>
+
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body text-center">
+                      {{ session('flash_message1') }}
+                    </div>
+                    <div class="modal-footer text-center">
+                    </div>
+                  </div>
+                </div>
               </div>
               @endif
-            </div>
+              <!--モーダルを入れる↑-->
 
+            </div>
+            <!-- お知らせ投稿↑ -->
+
+            <!-- クーポン投稿↓ -->
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="coupon">
 
               <!-- Default form subscription -->
@@ -434,6 +462,7 @@
                           　利用開始日：<input type="date" class="mb-2" name="startdate" value="{{old('startdate')}}"></input>
                         @endif
                       </div>
+
                       <div style="width: 45%;">
                         @if ($errors->has('starttime'))
                         <div>
@@ -485,45 +514,46 @@
                   <!-- Register in button -->
                   <input class="btn btn-info text-dark" type="submit" value="投稿">
                 </div>
+
               </form>
               <!-- Default form subscription -->
 
-              <!-- 登録完了メッセージの表示 -->
-              @if(Session::has('flashmessage3'))
-                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-                <script>
-                  $(window).load(function() {
-                  $('#modal_box3').modal('show');
-                  });
-                </script>
 
-                <!-- モーダルウィンドウの中身 -->
-                <div class="modal fade" id="modal_box3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
-                  aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h6 class="modal-title" id="exampleModalLabel3">CKén-マイページ(クーポン投稿)</h6>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        {{ session('flashmessage3') }}
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-info" data-dismiss="modal">閉じる</button>
-                      </div>
+              <!--モーダルを入れる↓-->
+              @if(Session::has('flash_message2'))
+              <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+              <script>
+                $(window).load(function() {
+                $('#myModal2').modal('show');
+                });
+              </script>
+
+              <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body text-center">
+                      {{ session('flash_message2') }}
+                    </div>
+                    <div class="modal-footer text-center">
                     </div>
                   </div>
                 </div>
-                <!-- モーダルウィンドウの中身 -->
+              </div>
               @endif
-              <!-- 登録完了メッセージの表示 -->
+              <!--モーダルを入れる↑-->
+
             </div>
+            <!-- クーポン投稿↑ -->
 
           </div>
+
         </div>
+
       </div>
       <!--/. コンテンツ -->
 
