@@ -152,9 +152,10 @@
                     <table class="table table-striped">
                       <thead>
                         <tr>
-                          <th scope="col"><big>日付</big></th>
-                          <th scope="col"><big>投稿者</big></th>
-                          <th scope="col"><big>タイトル</big></th>
+                          <th scope="col" style="width:25%;"><big>日付</big></th>
+                          <th scope="col" style="width:30%;"><big>投稿者</big></th>
+                          <th scope="col" style="width:40%;"><big>タイトル</big></th>
+                          <th scope="col" style="width:5%;"><big></big></th><!-- New!表示 -->
                         </tr>
                       </thead>
                       <tbody>
@@ -162,7 +163,7 @@
                           @foreach ($news_5 as $cont)
                             <tr>
                               <!--<th scope="row">{{ $cont->created_at->format('Y/m/d H:m:s') }}</th>-->
-                              <th scope="row">{{ $cont->updated_at->format('Y/m/d') }}
+                              <th scope="row" class="align-middle">{{ $cont->updated_at->format('Y/m/d') }}
                                 (@php
                                 $wday = mb_substr($cont->updated_at->format('Y/m/d (l)'), 12, 3);
                                 switch($wday){
@@ -175,8 +176,11 @@
                                   case "Sat": echo "土"; break;
                                 }
                               @endphp)</th>
-                              <td>{{ $cont->user->name }}</td>
-                              <td><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->newstitle }}</u></a></td>
+                              <td class="align-middle">{{ $cont->user->name }}</td>
+                              <td class="align-middle"><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->newstitle }}</u></a></td>
+                              <td class="text-danger align-middle">
+                                New!
+                              </td>
                             </tr>
                           @endforeach
                           <tr>
@@ -188,7 +192,7 @@
                           @foreach ($news as $cont)
                             <tr>
                               <!--<th scope="row">{{ $cont->created_at->format('Y-m-d') }}</th>-->
-                              <th scope="row">{{ $cont->updated_at->format('Y/m/d') }}
+                              <th scope="row" class="align-middle">{{ $cont->updated_at->format('Y/m/d') }}
                                 (@php
                                 $wday = mb_substr($cont->updated_at->format('Y/m/d (l)'), 12, 3);
                                 switch($wday){
@@ -201,8 +205,16 @@
                                   case "Sat": echo "土"; break;
                                 }
                               @endphp)</th>
-                              <td>{{ $cont->user->name }}</td>
-                              <td><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->newstitle }}</u></a></td>
+                              <td class="align-middle">{{ $cont->user->name }}</td>
+                              <td class="align-middle"><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->newstitle }}</u></a></td>
+                              <td class="text-danger align-middle">
+                                New!
+                                {{ \Carbon\Carbon::now()->format('Y/m/d/l') }}
+                                @php
+                                  $today = Carbon\Carbon::now()->format('Y/m/d');
+                                  echo $today;
+                                @endphp
+                              </td>
                             </tr>
                           @endforeach
                         @endif
@@ -246,9 +258,10 @@
                     <table class="table table-striped">
                       <thead>
                         <tr>
-                          <th scope="col"><big>日付</big></th>
-                          <th scope="col"><big>投稿者</big></th>
-                          <th scope="col"><big>タイトル</big></th>
+                          <th scope="col" style="width:25%;"><big>日付</big></th>
+                          <th scope="col" style="width:30%;"><big>投稿者</big></th>
+                          <th scope="col" style="width:40%;"><big>タイトル</big></th>
+                          <th scope="col" style="width:5%;"><big></big></th><!-- New!表示 -->
                         </tr>
                       </thead>
                       <tbody>
@@ -256,7 +269,7 @@
                           @foreach ($coupon_5 as $cont)
                             <tr>
                               <!--<th scope="row">{{ $cont->created_at->format('Y/m/d H:m:s') }}</th>-->
-                              <th scope="row">{{ $cont->updated_at->format('Y/m/d') }}
+                              <th scope="row" class="align-middle">{{ $cont->updated_at->format('Y/m/d') }}
                                 (@php
                                 $wday = mb_substr($cont->updated_at->format('Y/m/d (l)'), 12, 3);
                                 switch($wday){
@@ -269,8 +282,11 @@
                                   case "Sat": echo "土"; break;
                                 }
                               @endphp)</th>
-                              <td>{{ $cont->user->name }}</td>
-                              <td><a href="{{ route('coupondetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->coupontitle }}</u></a></td>
+                              <td class="align-middle">{{ $cont->user->name }}</td>
+                              <td class="align-middle"><a href="{{ route('coupondetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->coupontitle }}</u></a></td>
+                              <td class="text-danger align-middle">
+                                New!
+                              </td>
                             </tr>
                           @endforeach
                           <tr>
@@ -282,7 +298,7 @@
                           @foreach ($coupon as $cont)
                             <tr>
                               <!--<th scope="row">{{ $cont->created_at->format('Y-m-d') }}</th>-->
-                              <th scope="row">{{ $cont->updated_at->format('Y/m/d') }}
+                              <th scope="row" class="align-middle">{{ $cont->updated_at->format('Y/m/d') }}
                                 (@php
                                 $wday = mb_substr($cont->updated_at->format('Y/m/d (l)'), 12, 3);
                                 switch($wday){
@@ -295,8 +311,11 @@
                                   case "Sat": echo "土"; break;
                                 }
                               @endphp)</th>
-                              <td>{{ $cont->user->name }}</td>
-                              <td><a href="{{ route('coupondetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->coupontitle }}</u></a></td>
+                              <td class="align-middle">{{ $cont->user->name }}</td>
+                              <td class="align-middle"><a href="{{ route('coupondetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->coupontitle }}</u></a></td>
+                              <td class="text-danger align-middle">
+                                New!
+                              </td>
                             </tr>
                           @endforeach
                         @endif

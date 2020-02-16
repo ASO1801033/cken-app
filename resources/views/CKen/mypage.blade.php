@@ -356,14 +356,14 @@
                   @if ($errors->has('news'))
                   <div>
                     @foreach ($errors->get('news') as $e)
-                    <textarea class="form-control rounded-0 mb-0" rows="5" placeholder="お知らせを入力してください" name="news" value="{{old('news')}}"></textarea>
+                    <textarea class="form-control rounded-0 mb-0" rows="5" placeholder="お知らせを入力してください" name="news">{{old('news')}}</textarea>
                     <div class="text-danger text-left">
                       {{$e}}
                     </div>
                     @endforeach
                   </div>
                   @else
-                    <textarea class="form-control rounded-0 mb-3" rows="6" placeholder="お知らせを入力してください" name="news" value="{{old('news')}}"></textarea>
+                    <textarea class="form-control rounded-0 mb-3" rows="6" placeholder="お知らせを入力してください" name="news">{{old('news')}}</textarea>
                   @endif
                 </div>
 
@@ -436,14 +436,14 @@
                   @if ($errors->has('contents'))
                   <div>
                     @foreach ($errors->get('contents') as $e)
-                    <textarea class="form-control rounded-0" rows="3" placeholder="クーポン内容を入力してください" name="contents" value="{{old('contents')}}"></textarea>
+                    <textarea class="form-control rounded-0" rows="3" placeholder="クーポン内容を入力してください" name="contents">{{old('contents')}}</textarea>
                     <div class="text-danger text-left">
                       {{$e}}
                     </div>
                     @endforeach
                   </div>
                   @else
-                    <textarea class="form-control rounded-0 mb-3" rows="5" placeholder="クーポン内容を入力してください" name="contents" value="{{old('contents')}}"></textarea>
+                    <textarea class="form-control rounded-0 mb-3" rows="5" placeholder="クーポン内容を入力してください" name="contents">{{old('contents')}}</textarea>
                   @endif
 
                   <div class="text-left">
