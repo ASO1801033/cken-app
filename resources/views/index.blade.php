@@ -207,6 +207,7 @@
                               @endphp)</th>
                               <td class="align-middle">{{ $cont->user->name }}</td>
                               <td class="align-middle"><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->newstitle }}</u></a></td>
+                              <!-- 投稿日から1週間の間はNew!を表示 -->
                               <td class="text-danger align-middle">
                                 New!
                                 {{ \Carbon\Carbon::now()->format('Y/m/d/l') }}
@@ -284,6 +285,7 @@
                               @endphp)</th>
                               <td class="align-middle">{{ $cont->user->name }}</td>
                               <td class="align-middle"><a href="{{ route('coupondetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->coupontitle }}</u></a></td>
+                              <!-- 投稿日から1週間の間はNew!を表示 -->
                               <td class="text-danger align-middle">
                                 New!
                               </td>
