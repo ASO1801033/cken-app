@@ -8,3 +8,5 @@
 <h2>Web applications overview</h2>
 <li>General users can register and manage shops they want to go to!</li>
 <li>Corporate users can post and manage announcements and coupons!</li>
+
+<h2>変更中</h2>
