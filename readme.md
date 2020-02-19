@@ -10,3 +10,4 @@
 <li>Corporate users can post and manage announcements and coupons!</li>
 
 <h2>変更中</h2>
+sss
