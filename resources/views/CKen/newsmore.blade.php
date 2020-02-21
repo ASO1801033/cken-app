@@ -90,9 +90,10 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th scope="col"><big>日付</big></th>
-            <th scope="col"><big>投稿者</big></th>
-            <th scope="col"><big>タイトル</big></th>
+            <th scope="col" style="width:25%;"><big>日付</big></th>
+            <th scope="col" style="width:30%;"><big>投稿者</big></th>
+            <th scope="col" style="width:40%;"><big>タイトル</big></th>
+            <th scope="col" style="width:5%;"><big></big></th><!-- New!表示 -->
           </tr>
         </thead>
         <tbody>
@@ -113,6 +114,19 @@
               @endphp)</th>
               <td>{{ $cont->user->name }}</td>
               <td><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->newstitle }}</u></a></td>
+              <!-- 更新日から1週間の間はNew!を表示 -->
+              <td class="text-danger align-middle">
+                <b>
+                @php
+                  $day = $cont->updated_at; //更新日を取得
+                  $sevenafterday =  $day->addDays(7); //更新日から1週間後を計算
+                  $today = Carbon\Carbon::now(); //実行当日の日付を取得
+                  if($today->format('Y/m/d H:i:s') <= $sevenafterday->format('Y/m/d 23:59:59')){
+                    echo "New!"; //トップページの表示処理が更新日から1週間後の23:59:59以内はNew!を表示
+                  }
+                @endphp
+                </b>
+              </td>
             </tr>
           @endforeach
         </tbody>

@@ -196,7 +196,7 @@
                           <tr>
                             <th scope="row"></th>
                             <td></td>
-                            <td><a href="{{ route('newsmore') }}"><u class="text-primary">もっと見る</u></a></td>
+                            <td colspan="2" class="text-right"><a href="{{ route('newsmore') }}"><u class="text-primary">もっと見る</u></a></td>
                           </tr>
                         @else
                           @foreach ($news as $cont)
@@ -317,7 +317,7 @@
                           <tr>
                             <th scope="row"></th>
                             <td></td>
-                            <td><a href="#"><u class="text-primary">もっと見る</u></a></td>
+                            <td colspan="2" class="text-right"><a href="#"><u class="text-primary">もっと見る</u></a></td>
                           </tr>
                         @else
                           @foreach ($coupon as $cont)

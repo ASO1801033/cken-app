@@ -10,8 +10,6 @@
 <li>一般ユーザーは行きたいお店の登録・管理が出来る！</li>
 <li>企業ユーザーはお知らせやクーポンの投稿・管理が出来る！</li>
 
-<br>
-
 <h1>CKén</h1>
 <h2>Web applications overview</h2>
 <li>General users can register and manage shops they want to go to!</li>
