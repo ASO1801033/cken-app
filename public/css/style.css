@@ -99,3 +99,8 @@
   top: 230px;
   right: 50px;
 }
+
+.center-img{
+  display: block;
+  margin: 0 auto;
+}
