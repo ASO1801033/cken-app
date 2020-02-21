@@ -1,7 +1,7 @@
 <!-- ![logo](https://user-images.githubusercontent.com/57512994/74941951-45d8ec00-5437-11ea-8740-59fde1133b70.png) -->
 <!-- <img src="public/img/logo.png"> -->
 
-<div class="center-img">
+<div align="center">
   <img src="public/img/logo.png">
 </div>
 
@@ -10,7 +10,7 @@
 <li>一般ユーザーは行きたいお店の登録・管理が出来る！</li>
 <li>企業ユーザーはお知らせやクーポンの投稿・管理が出来る！</li>
 
-<br><br>
+<br>
 
 <h1>CKén</h1>
 <h2>Web applications overview</h2>
