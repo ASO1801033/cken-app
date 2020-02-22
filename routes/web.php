@@ -82,4 +82,7 @@ Route::post ('/cken/mypage/editretouch/{id}/update', 'CKenController@editupdate'
 //クーポン詳細ページのルート情報
 Route::get ('/cken/coupondetail/{id}', 'CKenController@coupondetail')->name('coupondetail'); //coupondetail.blade.php
 
+//クーポンをもっと見るページのルート情報
+Route::get ('/cken/couponmore', 'CKenController@couponmore')->name('couponmore'); //couponmore.blade.php
+
 Auth::routes();

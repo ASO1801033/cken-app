@@ -418,7 +418,7 @@
                 <!--/. キャッチコピー -->
 
                 <!-- form-group -->
-                <div class="form-group marginB">
+                <div class="form-group">
 
                   @if ($errors->has('coupontitle'))
                   <div>

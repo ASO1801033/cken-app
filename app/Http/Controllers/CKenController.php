@@ -357,4 +357,16 @@ class CkenController extends Controller
     return redirect('/cken/mypage/edit');
   }
 
+  //クーポンをもっとみるページのアクション
+  public function couponmore() {
+    $couponsdata = Coupon::orderBy('updated_at', 'desc')->get();
+
+    // テンプレートへ渡す情報を作成する。
+    $couponsdata = [
+        'coupon' => $couponsdata
+    ];
+    \Log::info('クーポンをもっと見るページ表示'); //ログにメッセージを反映させる
+    return view('cken.couponmore', $couponsdata);
+  }
+
 }
