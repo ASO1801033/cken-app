@@ -76,8 +76,11 @@ Route::post ('/cken/mypage/newsdelete', 'CKenController@newseditdelete') -> midd
 //お店側の情報修正ページ クーポンを削除するボタンを押した時
 Route::post ('/cken/mypage/coupondelete', 'CKenController@couponeditdelete') -> middleware('auth')->name('couponeditdelete'); //edit.blade.php
 
-//お店側のお知らせ・クーポンの内容修正ページ 実行するボタンを押した時
-Route::post ('/cken/mypage/editretouch/{id}/update', 'CKenController@editupdate') -> middleware('auth')->name('editupdate'); //retouch.blade.php
+//お店側のお知らせの内容修正ページ 実行するボタンを押した時
+Route::post ('/cken/mypage/editretouch/{id}/newsupdate', 'CKenController@editnewsupdate') -> middleware('auth')->name('editnewsupdate'); //editnewsretouch.blade.php
+
+//お店側のクーポンの内容修正ページ 実行するボタンを押した時
+Route::post ('/cken/mypage/editretouch/{id}/couponupdate', 'CKenController@editcouponupdate') -> middleware('auth')->name('editcouponupdate'); //editcouponretouch.blade.php
 
 //クーポン詳細ページのルート情報
 Route::get ('/cken/coupondetail/{id}', 'CKenController@coupondetail')->name('coupondetail'); //coupondetail.blade.php

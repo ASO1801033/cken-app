@@ -68,7 +68,7 @@
             <!--/. キャッチコピー -->
 
             <!-- Default form subscription -->
-            <form class="text-center p-3" action="{{ route('editupdate', $editdata->id) }}" method="post">
+            <form class="text-center p-3" action="{{ route('editnewsupdate', $editdata->id) }}" method="post">
               {{ csrf_field() }}
 
               <div class="mb-3">

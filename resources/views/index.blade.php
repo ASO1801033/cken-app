@@ -86,7 +86,7 @@
             <img class="d-block w-100" src="slide/img/dum01.png" alt="First slide">
           </div>
           <div class="carousel-item">
-              <img class="d-block w-100" src="slide/img/dum02.png" alt="Second slide">
+            <img class="d-block w-100" src="slide/img/dum02.png" alt="Second slide">
           </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="slide/img/dum03.png" alt="Third slide">

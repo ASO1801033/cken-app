@@ -336,8 +336,8 @@ class CkenController extends Controller
     return redirect('cken/mypage/edit');
   }
 
-  //お店側のお知らせ・クーポンの内容修正ページ 実行するボタンを押した時
-  public function editupdate(UpdateRequest $req, $id) {
+  //お店側のお知らせの内容修正ページ 実行するボタンを押した時
+  public function editnewsupdate(UpdateRequest $req, $id) {
     //お店を取得しておくviewの引数にデータの変数を渡す
     $newsdata = News::find($id);
 
@@ -353,6 +353,47 @@ class CkenController extends Controller
     $newsdata->save();
 
     \Log::info('企業ユーザー：お知らせ情報修正実行するボタン押下→更新実行'); //ログにメッセージを反映させる
+    //mypage/editへリダイレクトする
+    return redirect('/cken/mypage/edit');
+  }
+
+  //お店側のお知らせの内容修正ページ 実行するボタンを押した時
+  public function editcouponupdate(UpdateRequest $req, $id) {
+    //お店を取得しておくviewの引数にデータの変数を渡す
+    $coupondata = Coupon::find($id);
+
+    if(isset($req->coupontitle)) {
+      //coupontitleに入力があれば更新
+      $coupondata->coupontitle = $req->coupontitle;
+    }
+
+    if(isset($req->contents)) {
+      //contentsに入力があれば更新
+      $coupondata->contents = $req->contents;
+    }
+
+    if(isset($req->startdate)) {
+      //startdateに入力があれば更新
+      $coupondata->startdate = $req->startdate;
+    }
+
+    if(isset($req->starttime)) {
+      //starttimeに入力があれば更新
+      $coupondata->starttime = $req->starttime;
+    }
+
+    if(isset($req->finishdate)) {
+      //finishdateに入力があれば更新
+      $coupondata->finishdate = $req->finishdate;
+    }
+
+    if(isset($req->finishtime)) {
+      //finishtimeに入力があれば更新
+      $coupondata->finishtime = $req->finishtime;
+    }
+    $coupondata->save();
+
+    \Log::info('企業ユーザー：クーポン情報修正実行するボタン押下→更新実行'); //ログにメッセージを反映させる
     //mypage/editへリダイレクトする
     return redirect('/cken/mypage/edit');
   }

@@ -185,7 +185,7 @@ editnews<!DOCTYPE html>
                                   case "Sat": echo "土"; break;
                                 }
                               @endphp)</th>
-                              <td class="align-middle"><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->coupontitle }}</u></a></td>
+                              <td class="align-middle"><a href="{{ route('coupondetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->coupontitle }}</u></a></td>
                               <td class="align-middle"><a class="btn btn-info text-dark" href="{{ route('editcouponretouch', $cont->id) }}" role="button">修正</a></td>
                               <td class="align-middle"><input type="checkbox" name="chkcouponDelete[]" value="{{ $cont->id }}"></td>
                             </tr>

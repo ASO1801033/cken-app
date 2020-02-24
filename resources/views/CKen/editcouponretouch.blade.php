@@ -63,19 +63,19 @@
 
             <!-- キャッチコピー -->
             <p class="catch-copy mt-3">
-              内容の修正↓利用開始日時と利用終了日時の表示
+              内容の修正
             </p>
             <!--/. キャッチコピー -->
 
             <!-- Default form subscription -->
-            <form class="text-center p-3" action="{{ route('editupdate', $editdata->id) }}" method="post">
+            <form class="text-center p-3" action="{{ route('editcouponupdate', $editdata->id) }}" method="post">
               {{ csrf_field() }}
 
               <div class="mb-3">
                   <label class="col-md-12 control-label text-left mb-0">タイトル</label>
 
                   <div class="col-md-12">
-                      <input type="text" class="form-control" name="coupontitle" value="{{ $editdata->coupontitle }}">
+                    <input type="text" class="form-control" name="coupontitle" value="{{ $editdata->coupontitle }}">
                   </div>
               </div>
 
@@ -83,8 +83,30 @@
                   <label class="col-md-12 control-label text-left mb-0">内容</label>
 
                   <div class="col-md-12">
-                      <textarea class="form-control" rows="5" name="contents">{{ $editdata->contents }}</textarea>
+                    <textarea class="form-control" rows="5" name="contents">{{ $editdata->contents }}</textarea>
                   </div>
+              </div>
+
+              <div class="mb-3">
+                <div class="row">
+                  <div style="width: 55%;">
+                    利用開始日：<input type="date" class="mb-2" name="startdate" value="{{ $editdata->startdate->format('Y-m-d') }}"></input>
+                  </div>
+
+                  <div style="width: 45%;">
+                    利用開始時間：<input type="time" class="mb-2" name="starttime" value="{{ $editdata->starttime }}"></input><br>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div style="width: 55%;">
+                    利用開始日：<input type="date" class="mb-2" name="finishdate" value="{{ $editdata->finishdate->format('Y-m-d') }}"></input>
+                  </div>
+
+                  <div style="width: 45%;">
+                    利用開始時間：<input type="time" class="mb-2" name="finishtime" value="{{ $editdata->finishtime }}"></input><br>
+                  </div>
+                </div>
               </div>
 
               <div class="mb-3">
