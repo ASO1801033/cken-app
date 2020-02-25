@@ -42,7 +42,7 @@
     <!--/.Navbar-->
 
     <!-- コンテンツ(スクロールするとヘッダーの下に動く) -->
-    <div class="container-fluid main marginB">
+    <div class="container-fluid main">
 
       <!-- キャッチコピー -->
       <p class="catch-copy text-center border-bottom border-info mt-3 mb-5">

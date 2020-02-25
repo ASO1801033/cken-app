@@ -27,11 +27,11 @@ class CouponRequest extends FormRequest
         'coupontitle' => 'required',
         'startdate' => 'required',
         'starttime' => 'required',
-        'finishdate' => 'required',
+        'finishdate' => 'required | after_or_equal:startdate',
         'finishtime' => 'required',
       ];
-      //利用開始日時<利用終了日時のバリデーションを作成する
 
+      //利用開始日時<利用終了日時のバリデーションを作成する
       return $validate_rule;
     }
 

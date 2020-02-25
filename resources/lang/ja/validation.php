@@ -16,7 +16,7 @@ return [
     'accepted'             => ':attributeを承認してください！',
     'active_url'           => ':attributeが有効なURLではありません！',
     'after'                => ':attributeには、:dateより後の日付を指定してください！',
-    'after_or_equal'       => ':attributeには、:date以前の日付を指定してください！',
+    'after_or_equal'       => ':attributeの入力に問題があります！',
     'alpha'                => ':attributeはアルファベットのみがご利用できます！',
     'alpha_dash'           => ':attributeはアルファベットとダッシュ(-)及び下線(_)がご利用できます！',
     'alpha_num'            => ':attributeはアルファベット数字がご利用できます！',
@@ -146,6 +146,8 @@ return [
       'email' => 'メールアドレス',
       'password' => 'パスワード',
       'password_confirmation' => '確認用パスワード',
+      'startdate' => '利用開始日',
+      'finishdate' => '利用終了日'
     ],
 
 ];
