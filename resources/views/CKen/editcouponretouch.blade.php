@@ -100,11 +100,28 @@
 
                 <div class="row">
                   <div style="width: 55%;">
-                    利用開始日：<input type="date" class="mb-2" name="finishdate" value="{{ $editdata->finishdate->format('Y-m-d') }}"></input>
+                    利用終了日：<input type="date" class="mb-2" name="finishdate" value="{{ $editdata->finishdate->format('Y-m-d') }}"></input>
+                    <!-- ↓情報修正時に日付のバリデーションを適用させる(改良中) -->
+                    <style>/*
+                    @if ($errors->has('finishdate'))
+                    <div>
+                      @foreach ($errors->get('finishdate') as $e)
+                        利用終了日：<input type="date" class="mb-0" name="finishdate" value="{{ $editdata->finishdate->format('Y-m-d') }}"></input>
+                      <div class="text-danger text-left">
+                        　　{{$e}}
+                      </div>
+                      @endforeach
+                    </div>
+                    @else
+                      利用終了日：<input type="date" class="mb-2" name="startdate" value="{{ $editdata->finishdate->format('Y-m-d') }}"></input>
+                    @endif
+                    */</style>
+                    <!-- ↑情報修正時に日付のバリデーションを適用させる(改良中) -->
                   </div>
 
+
                   <div style="width: 45%;">
-                    利用開始時間：<input type="time" class="mb-2" name="finishtime" value="{{ $editdata->finishtime }}"></input><br>
+                    利用終了時間：<input type="time" class="mb-2" name="finishtime" value="{{ $editdata->finishtime }}"></input><br>
                   </div>
                 </div>
               </div>

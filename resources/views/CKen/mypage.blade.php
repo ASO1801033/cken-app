@@ -443,7 +443,7 @@
                     @endforeach
                   </div>
                   @else
-                    <textarea class="form-control rounded-0 mb-3" rows="5" placeholder="クーポン内容を入力してください" name="contents">{{old('contents')}}</textarea>
+                    <textarea class="form-control rounded-0 mb-3" rows="3" placeholder="クーポン内容を入力してください" name="contents">{{old('contents')}}</textarea>
                   @endif
 
                   <div class="text-left">
