@@ -28,7 +28,7 @@ class CouponRequest extends FormRequest
         'startdate' => 'required',
         'starttime' => 'required',
         'finishdate' => 'required | after_or_equal:startdate',
-        'finishtime' => 'required',
+        'finishtime' => 'required | after_or_equal:starttime',
       ];
 
       //利用開始日時<利用終了日時のバリデーションを作成する

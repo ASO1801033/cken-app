@@ -115,7 +115,7 @@
 
       <!-- キャッチコピー -->
       <p class="catch-copy text-center border-bottom border-info mt-3 mb-5">
-        CKénで始めるお出かけライフ
+        <ruby><rb>CKén</rb><rp>（</rp><rt>クッケン</rt><rp>）</rp></ruby>で始めるお出かけライフ
       </p>
       <!--/. キャッチコピー -->
 
@@ -177,7 +177,7 @@
                                 }
                               @endphp)</th>
                               <td class="align-middle">{{ $cont->user->name }}</td>
-                              <td class="align-middle"><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->newstitle }}</u></a></td>
+                              <td class="align-middle"><a href="{{ route('newsdetail', $cont->id) }}"><u class="text-primary">{{ $cont->newstitle }}</u></a></td>
                               <!-- 更新日から1週間の間はNew!を表示 -->
                               <td class="text-danger align-middle">
                                 <b>
@@ -216,7 +216,7 @@
                                 }
                               @endphp)</th>
                               <td class="align-middle">{{ $cont->user->name }}</td>
-                              <td class="align-middle"><a href="{{ route('newsdetail', $cont->id) }}" target="_blank"><u class="text-primary">{{ $cont->newstitle }}</u></a></td>
+                              <td class="align-middle"><a href="{{ route('newsdetail', $cont->id) }}"><u class="text-primary">{{ $cont->newstitle }}</u></a></td>
                               <!-- 更新日から1週間の間はNew!を表示 -->
                               <td class="text-danger align-middle">
                                 <b>
@@ -465,7 +465,8 @@
             </a>
           </div>
           <div class="col-4">
-            <a href="http://127.0.0.1:8000/cken/mypage/coupon">
+            <!--<a href="http://127.0.0.1:8000/cken/mypage/coupon">-->
+            <a href="#">
               <i class="fa fa-money fa-2x text-dark" aria-hidden="true"></i><br>
               <b class="text-dark">クーポン</b>
             </a>

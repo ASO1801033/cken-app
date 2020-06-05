@@ -147,7 +147,9 @@ return [
       'password' => 'パスワード',
       'password_confirmation' => '確認用パスワード',
       'startdate' => '利用開始日',
-      'finishdate' => '利用終了日'
+      'starttime' => '利用開始時間',
+      'finishdate' => '利用終了日',
+      'finishtime' => '利用終了時間',
     ],
 
 ];

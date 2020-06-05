@@ -59,7 +59,7 @@ Route::post ('/cken/mypage/shop/notwent/{id}', 'CKenController@notwentbutton') -
 Route::get ('/cken/mypage/shop/delete/{id}', 'CKenController@deletebutton') -> middleware('auth')->name('deletebutton'); //wentshopinfo.blade.php
 
 //一般ユーザークーポンのルート情報
-Route::get ('/cken/mypage/coupon', 'CKenController@coupon_user') -> middleware('auth'); //coupon_user.blade.php
+//Route::get ('/cken/mypage/coupon', 'CKenController@coupon_user') -> middleware('auth'); //coupon_user.blade.php
 
 //お店側の情報修正一覧ページのルート情報
 Route::get ('/cken/mypage/edit', 'CKenController@edit') -> middleware('auth')->name('edit'); //edit.blade.php

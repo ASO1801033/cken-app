@@ -69,7 +69,7 @@
               お店の詳細
 
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-sm" id="deletebutton" data-toggle="modal" data-target="#basicExampleModal">
+              <button type="button" class="btn btn-sm align-middle" id="deletebutton" data-toggle="modal" data-target="#basicExampleModal">
                 <i class="fa fa-trash-o text-danger fa-2x" aria-hidden="true"></i>
               </button>
 
@@ -88,9 +88,9 @@
                       本当に削除しますか？
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-success" data-dismiss="modal">いいえ</button>
+                      <button type="button" class="btn btn-success text-dark" data-dismiss="modal">いいえ</button>
                       <a href="{{ route('deletebutton', $goshops->id) }}">
-                        <button type="button" class="btn btn-info">削除する</button>
+                        <button type="button" class="btn btn-info text-dark">削除する</button>
                       </a>
                     </div>
                   </div>
@@ -192,7 +192,8 @@
             </a>
           </div>
           <div class="col-4">
-            <a href="http://127.0.0.1:8000/cken/mypage/coupon">
+            <!--<a href="http://127.0.0.1:8000/cken/mypage/coupon">-->
+            <a href="#">
               <i class="fa fa-money fa-2x text-dark" aria-hidden="true"></i><br>
               <b class="text-dark">クーポン</b>
             </a>

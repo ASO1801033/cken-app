@@ -79,7 +79,7 @@
     <!--/.Navbar-->
 
     <!-- コンテンツ -->
-    <div class="container-fluid main">
+    <div class="container-fluid main marginB">
 
       <!-- キャッチコピー -->
       <p class="catch-copy text-center border-bottom border-info mt-3 mb-5">
@@ -108,9 +108,9 @@
 
       <!-- お知らせを閉じるボタン -->
       <form class="text-center" style="margin-bottom:78px;">
-        <button type="button" class="btn btn-info text-dark" onclick="window.close();">
-          お知らせを閉じる
-        </button>
+        <a href="{{ route('index') }}">
+          <button type="button" class="btn btn-info text-dark">トップページに戻る</button>
+        </a>
       </form>
       <!--/. お知らせを閉じるボタン -->
 
@@ -149,7 +149,11 @@
             </a>
           </div>
           <div class="col-4">
-            <a href="http://127.0.0.1:8000/cken/mypage/coupon">
+            <!--<a href="http://127.0.0.1:8000/cken/mypage/coupon">-->
+              <a href="#">
+                <i class="fa fa-money fa-2x text-dark" aria-hidden="true"></i><br>
+                <b class="text-dark">クーポン</b>
+              </a>
               <i class="fa fa-money fa-2x text-dark" aria-hidden="true"></i><br>
               <b class="text-dark">クーポン</b>
             </a>

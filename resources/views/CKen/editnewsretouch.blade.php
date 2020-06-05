@@ -42,7 +42,7 @@
     <!--/.Navbar-->
 
     <!-- コンテンツ(スクロールするとヘッダーの下に動く) -->
-    <div class="container-fluid main">
+    <div class="container-fluid main marginB">
 
       <!-- キャッチコピー -->
       <p class="catch-copy text-center border-bottom border-info mt-3 mb-5">
@@ -71,20 +71,42 @@
             <form class="text-center p-3" action="{{ route('editnewsupdate', $editdata->id) }}" method="post">
               {{ csrf_field() }}
 
-              <div class="mb-3">
-                  <label class="col-md-12 control-label text-left mb-0">タイトル</label>
+              <div>
+                <label class="col-md-12 control-label text-left mb-0">タイトル</label>
 
-                  <div class="col-md-12">
-                      <input type="text" class="form-control" name="newstitle" value="{{ $editdata->newstitle }}">
+                <div class="col-md-12">
+                  @if ($errors->has('newstitle'))
+                  <div>
+                    @foreach ($errors->get('newstitle') as $e)
+                    <input type="text" class="form-control mb-0" name="newstitle" value="{{ old('newstitle') }}">
+                    <div class="text-danger text-left">
+                      {{$e}}
+                    </div>
+                    @endforeach
                   </div>
+                  @else
+                    <input type="text" class="form-control mb-3" name="newstitle" value="{{ $editdata->newstitle }}">
+                  @endif
+                </div>
               </div>
 
-              <div class="mb-3">
-                  <label class="col-md-12 control-label text-left mb-0">内容</label>
+              <div>
+                <label class="col-md-12 control-label text-left mb-0">内容</label>
 
-                  <div class="col-md-12">
-                      <textarea class="form-control" rows="5" name="news">{{ $editdata->news }}</textarea>
+                <div class="col-md-12">
+                  @if ($errors->has('news'))
+                  <div>
+                    @foreach ($errors->get('news') as $e)
+                    <textarea class="form-control rounded-0 mb-0" rows="4" name="news" value="{{ old('news') }}"></textarea>
+                    <div class="text-danger text-left">
+                      {{$e}}
+                    </div>
+                    @endforeach
                   </div>
+                  @else
+                    <textarea class="form-control rounded-0 mb-3" rows="4" name="news">{{ $editdata->news }}</textarea>
+                  @endif
+                </div>
               </div>
 
               <div class="mb-3">

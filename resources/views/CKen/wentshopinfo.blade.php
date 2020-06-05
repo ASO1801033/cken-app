@@ -190,7 +190,8 @@
             </a>
           </div>
           <div class="col-4">
-            <a href="http://127.0.0.1:8000/cken/mypage/coupon">
+            <!--<a href="http://127.0.0.1:8000/cken/mypage/coupon">-->
+            <a href="#">
               <i class="fa fa-money fa-2x text-dark" aria-hidden="true"></i><br>
               <b class="text-dark">クーポン</b>
             </a>

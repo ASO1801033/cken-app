@@ -43,7 +43,7 @@
 
     @if(Auth::user()->flg == 0)
       <!-- コンテンツ(スクロールするとヘッダーの下に動く) -->
-      <div class="container-fluid main">
+      <div class="container-fluid main marginB">
 
         <!-- キャッチコピー -->
         <p class="catch-copy text-center border-bottom border-info mt-3 mb-5">
@@ -127,7 +127,7 @@
               <!-- Default form subscription -->
 
               <!-- 登録完了メッセージの表示 -->
-              @if(Session::has('flashmessage1'))
+              @if(Session::has('flash_message1'))
                 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
                 <script>
                   $(window).load(function() {
@@ -141,16 +141,16 @@
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h6 class="modal-title" id="exampleModalLabel1">CKén-マイページ(行きたいお店登録)</h6>
+                        <h6 class="modal-title" id="exampleModalLabel1">CKén-マイページ</h6>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
                       <div class="modal-body">
-                        {{ session('flashmessage1') }}
+                        {{ session('flash_message1') }}
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-info" data-dismiss="modal">閉じる</button>
+                        <button type="button" class="btn btn-info text-dark" data-dismiss="modal">閉じる</button>
                       </div>
                     </div>
                   </div>
@@ -290,7 +290,8 @@
               </a>
             </div>
             <div class="col-4">
-              <a href="http://127.0.0.1:8000/cken/mypage/coupon">
+              <!--<a href="http://127.0.0.1:8000/cken/mypage/coupon">-->
+              <a href="#">
                 <i class="fa fa-money fa-2x text-dark" aria-hidden="true"></i><br>
                 <b class="text-dark">クーポン</b>
               </a>
@@ -302,7 +303,7 @@
       <!--/. Footer -->
     @else
       <!-- コンテンツ(スクロールするとヘッダーの下に動く) -->
-      <div class="container-fluid main">
+      <div class="container-fluid main marginB">
 
         <!-- キャッチコピー -->
         <p class="catch-copy text-center border-bottom border-info mt-3 mb-5">
@@ -322,7 +323,7 @@
                 aria-selected="false">クーポン作成</a>
             </li>
           </ul>
-          <div class="tab-content" id="myTabContent">
+          <div class="tab-content mb-4" id="myTabContent">
 
             <!-- お知らせ投稿↓ -->
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="news">
@@ -372,9 +373,8 @@
               </form>
               <!-- Default form subscription -->
 
-
               <!--モーダルを入れる↓-->
-              @if(Session::has('flash_message1'))
+              @if(Session::has('flash_message2'))
               <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
               <script>
                 $(window).load(function() {
@@ -386,14 +386,16 @@
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
+                      <h6 class="modal-title" id="exampleModalLabel1">CKén-マイページ</h6>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
                     <div class="modal-body text-center">
-                      {{ session('flash_message1') }}
+                      {{ session('flash_message2') }}
                     </div>
-                    <div class="modal-footer text-center">
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-info text-dark" data-dismiss="modal">閉じる</button>
                     </div>
                   </div>
                 </div>
@@ -517,40 +519,6 @@
 
               </form>
               <!-- Default form subscription -->
-
-
-              <!--モーダルを入れる↓-->
-              @if(Session::has('flash_message2'))
-                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-                <script>
-                  $(window).load(function() {
-                  $('#modal_box1').modal('show');
-                  });
-                </script>
-
-                <!-- モーダルウィンドウの中身 -->
-                <div class="modal fade" id="modal_box1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
-                  aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h6 class="modal-title" id="exampleModalLabel1">CKén-マイページ</h6>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        {{ session('flash_message2') }}
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-info" data-dismiss="modal">閉じる</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- モーダルウィンドウの中身 -->
-              @endif
-              <!--モーダルを入れる↑-->
 
             </div>
             <!-- クーポン投稿↑ -->

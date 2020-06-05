@@ -71,57 +71,106 @@
             <form class="text-center p-3" action="{{ route('editcouponupdate', $editdata->id) }}" method="post">
               {{ csrf_field() }}
 
-              <div class="mb-3">
-                  <label class="col-md-12 control-label text-left mb-0">タイトル</label>
+              <div>
+                <label class="col-md-12 control-label text-left mb-0">タイトル</label>
 
-                  <div class="col-md-12">
-                    <input type="text" class="form-control" name="coupontitle" value="{{ $editdata->coupontitle }}">
+                <div class="col-md-12">
+                  @if ($errors->has('coupontitle'))
+                  <div>
+                    @foreach ($errors->get('coupontitle') as $e)
+                    <input type="text" class="form-control mb-0" name="coupontitle" value="{{ old('coupontitle') }}">
+                    <div class="text-danger text-left">
+                      {{$e}}
+                    </div>
+                    @endforeach
                   </div>
-              </div>
-
-              <div class="mb-3">
-                  <label class="col-md-12 control-label text-left mb-0">内容</label>
-
-                  <div class="col-md-12">
-                    <textarea class="form-control" rows="5" name="contents">{{ $editdata->contents }}</textarea>
-                  </div>
-              </div>
-
-              <div class="mb-3">
-                <div class="row">
-                  <div style="width: 55%;">
-                    利用開始日：<input type="date" class="mb-2" name="startdate" value="{{ $editdata->startdate->format('Y-m-d') }}"></input>
-                  </div>
-
-                  <div style="width: 45%;">
-                    利用開始時間：<input type="time" class="mb-2" name="starttime" value="{{ $editdata->starttime }}"></input><br>
-                  </div>
+                  @else
+                    <input type="text" class="form-control mb-3" name="coupontitle" value="{{ $editdata->coupontitle }}">
+                  @endif
                 </div>
+              </div>
 
+              <div>
+                <label class="col-md-12 control-label text-left mb-0">内容</label>
+
+                <div class="col-md-12">
+                  @if ($errors->has('contents'))
+                  <div>
+                    @foreach ($errors->get('contents') as $e)
+                    <textarea class="form-control" rows="4" name="contents" value="{{ old('contents') }}"></textarea>
+                    <div class="text-danger text-left">
+                      {{$e}}
+                    </div>
+                    @endforeach
+                  </div>
+                  @else
+                    <textarea class="form-control mb-3" rows="4" name="contents">{{ $editdata->contents }}</textarea>
+                  @endif
+                </div>
+              </div>
+
+              <div class="text-left">
                 <div class="row">
                   <div style="width: 55%;">
-                    利用終了日：<input type="date" class="mb-2" name="finishdate" value="{{ $editdata->finishdate->format('Y-m-d') }}"></input>
-                    <!-- ↓情報修正時に日付のバリデーションを適用させる(改良中) -->
-                    <style>/*
-                    @if ($errors->has('finishdate'))
+                    @if ($errors->has('startdate'))
                     <div>
-                      @foreach ($errors->get('finishdate') as $e)
-                        利用終了日：<input type="date" class="mb-0" name="finishdate" value="{{ $editdata->finishdate->format('Y-m-d') }}"></input>
+                      @foreach ($errors->get('startdate') as $e)
+                      　　利用開始日：<input type="date" class="mb-0" name="startdate" value="{{ $editdata->startdate->format('Y-m-d') }}"></input>
                       <div class="text-danger text-left">
                         　　{{$e}}
                       </div>
                       @endforeach
                     </div>
                     @else
-                      利用終了日：<input type="date" class="mb-2" name="startdate" value="{{ $editdata->finishdate->format('Y-m-d') }}"></input>
+                      　　利用開始日：<input type="date" class="mb-2" name="startdate" value="{{ $editdata->startdate->format('Y-m-d') }}"></input>
                     @endif
-                    */</style>
-                    <!-- ↑情報修正時に日付のバリデーションを適用させる(改良中) -->
                   </div>
 
+                  <div style="width: 45%;">
+                    @if ($errors->has('starttime'))
+                    <div>
+                      @foreach ($errors->get('starttime') as $e)
+                      利用開始時間：<input type="time" class="mb-0" name="starttime" value="{{ $editdata->starttime }}"></input><br>
+                      <div class="text-danger text-left">
+                        {{$e}}
+                      </div>
+                      @endforeach
+                    </div>
+                    @else
+                      利用開始時間：<input type="time" class="mb-2" name="starttime" value="{{ $editdata->starttime }}"></input><br>
+                    @endif
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div style="width: 55%;">
+                    @if ($errors->has('finishdate'))
+                    <div>
+                      @foreach ($errors->get('finishdate') as $e)
+                      　　利用終了日：<input type="date" class="mb-0" name="finishdate" value="{{ old('finishdate') }}"></input>
+                      <div class="text-danger text-left">
+                        　　{{$e}}
+                      </div>
+                      @endforeach
+                    </div>
+                    @else
+                      　　利用終了日：<input type="date" class="mb-2" name="finishdate" value="{{ $editdata->finishdate->format('Y-m-d') }}"></input>
+                    @endif
+                  </div>
 
                   <div style="width: 45%;">
-                    利用終了時間：<input type="time" class="mb-2" name="finishtime" value="{{ $editdata->finishtime }}"></input><br>
+                    @if ($errors->has('finishtime'))
+                    <div>
+                      @foreach ($errors->get('finishtime') as $e)
+                      利用終了時間：<input type="time" class="mb-0" name="finishtime" value="{{ old('finishtime') }}"></input><br>
+                      <div class="text-danger text-left">
+                        {{$e}}
+                      </div>
+                      @endforeach
+                    </div>
+                    @else
+                      利用終了時間：<input type="time" class="mb-2" name="finishtime" value="{{ $editdata->finishtime }}"</input><br>
+                    @endif
                   </div>
                 </div>
               </div>

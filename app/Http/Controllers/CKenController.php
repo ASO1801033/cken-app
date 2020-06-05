@@ -115,7 +115,7 @@ class CkenController extends Controller
 
       \Log::info('一般ユーザー：行きたいお店登録ボタン押下→登録実行'); //ログにメッセージを反映させる
       // テンプレート(resources/views/cken/mypage.blade.php)を表示
-      return redirect('/cken/mypage')->with('flashmessage1', '行きたいお店の登録が出来ました！');
+      return redirect('/cken/mypage')->with('flash_message1', '行きたいお店の登録が出来ました！');
   }
 
   //企業ユーザーお知らせ投稿ボタンを押した時の処理
@@ -129,7 +129,7 @@ class CkenController extends Controller
 
       \Log::info('企業ユーザー：お知らせ投稿ボタン押下→登録実行'); //ログにメッセージを反映させる
       // テンプレート(resources/views/cken/mypage.blade.php)を表示
-      return redirect('/cken/mypage')->with('flash_message1', 'お知らせの投稿が出来ました！');
+      return redirect('/cken/mypage')->with('flash_message2', "お知らせの投稿が出来ました！");
   }
 
   //企業ユーザークーポン投稿ボタンを押した時の処理
@@ -143,7 +143,7 @@ class CkenController extends Controller
 
       \Log::info('企業ユーザー：クーポン投稿ボタン押下→登録実行'); //ログにメッセージを反映させる
       // テンプレート(resources/views/cken/mypage.blade.php)を表示
-      return redirect('/cken/mypage')->with('flash_message2', 'クーポンの投稿が出来ました！');
+      return redirect('/cken/mypage')->with('flash_message2', "クーポンの投稿が出来ました！");
   }
 
   //行きたいお店リストの詳細ボタンを押した時の処理
@@ -337,7 +337,7 @@ class CkenController extends Controller
   }
 
   //お店側のお知らせの内容修正ページ 実行するボタンを押した時
-  public function editnewsupdate(UpdateRequest $req, $id) {
+  public function editnewsupdate(NewsRequest $req, $id) {
     //お店を取得しておくviewの引数にデータの変数を渡す
     $newsdata = News::find($id);
 
@@ -358,7 +358,7 @@ class CkenController extends Controller
   }
 
   //お店側のお知らせの内容修正ページ 実行するボタンを押した時
-  public function editcouponupdate(UpdateRequest $req, $id) {
+  public function editcouponupdate(CouponRequest $req, $id) {
     //お店を取得しておくviewの引数にデータの変数を渡す
     $coupondata = Coupon::find($id);
 

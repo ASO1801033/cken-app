@@ -133,8 +133,8 @@ editnews<!DOCTYPE html>
                           本当に削除しますか？
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-success" data-dismiss="modal">いいえ</button>
-                          <input type="submit" class="btn btn-info" value="削除する">
+                          <button type="button" class="btn btn-success text-dark" data-dismiss="modal">いいえ</button>
+                          <input type="submit" class="btn btn-info text-dark" value="削除する">
                         </div>
                       </div>
                     </div>
@@ -212,8 +212,8 @@ editnews<!DOCTYPE html>
                           本当に削除しますか？
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-success" data-dismiss="modal">いいえ</button>
-                          <input type="submit" class="btn btn-info" value="削除する">
+                          <button type="button" class="btn btn-success text-dark" data-dismiss="modal">いいえ</button>
+                          <input type="submit" class="btn btn-info text-dark" value="削除する">
                         </div>
                       </div>
                     </div>
