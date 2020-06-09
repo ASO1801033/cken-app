@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->integer('flg') -> default(0);
+            $table->integer('flg') -> default(0); //追加
         });
     }
 

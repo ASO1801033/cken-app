@@ -88,4 +88,12 @@ Route::get ('/cken/coupondetail/{id}', 'CKenController@coupondetail')->name('cou
 //クーポンをもっと見るページのルート情報
 Route::get ('/cken/couponmore', 'CKenController@couponmore')->name('couponmore'); //couponmore.blade.php
 
+Route::get('/home', 'HomeController@index')->name('home');
+
+// パスワードリセットのためのemail入力
+Route::get('password/reset',  'LoginController@showPasswordResetForm')->name('password.request');
+
+// リセットしたパスワードとログインIDが書かれたメール送信
+Route::post('password/email', 'LoginController@sendPasswordResetEmail')->name('password.email');
+
 Auth::routes();

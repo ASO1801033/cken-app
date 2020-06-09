@@ -27,6 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
+    //protected $redirectTo = '/home';
     protected $redirectTo = '/';
 
     /**
@@ -36,8 +37,9 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-      \Log::info('新規登録ページ表示'); //ログにメッセージを反映させる
-      $this->middleware('guest');
+        //$this->middleware('guest');
+        \Log::info('新規登録ページ表示'); //ログにメッセージを反映させる
+        $this->middleware('guest');
     }
 
     /**
@@ -63,13 +65,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-      //dd($data);
-      \Log::info('新規登録ボタン押下→登録実行'); //ログにメッセージを反映させる
-      return User::create([
-          'name' => $data['name'],
-          'email' => $data['email'],
-          'password' => bcrypt($data['password']),
-          'flg' => isset($data['flg']) ? $data['flg'] : 0
-      ]);
+        /*
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+        ]);
+        */
+        //dd($data);
+        \Log::info('新規登録ボタン押下→登録実行'); //ログにメッセージを反映させる
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+            'flg' => isset($data['flg']) ? $data['flg'] : 0
+        ]);
     }
 }

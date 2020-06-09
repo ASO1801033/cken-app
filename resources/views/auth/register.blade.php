@@ -56,6 +56,7 @@
 
       <h2 class="text-center mb-3">ユーザー新規登録</h2>
 
+      <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
@@ -145,6 +146,7 @@
                 </div>
             </div>
         </div>
+      </div>
     </div>
     <!--/. コンテンツ -->
 
