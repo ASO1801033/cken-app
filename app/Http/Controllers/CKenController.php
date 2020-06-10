@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Validator;
+use Auth;
+use Hash;
 use App\Http\Requests\RegRequest;
 use App\Http\Requests\NewsRequest;
 use App\Http\Requests\UpdateRequest;
@@ -410,4 +412,34 @@ class CkenController extends Controller
     return view('cken.couponmore', $couponsdata);
   }
 
+  //パスワードの更新(現在利用中のパスワードがわかる)のアクション
+  public function password_update_in() {
+    return view('cken.password_update');
+  }
+
+  //パスワード更新実施のアクション
+  public function password_update(Request $req) {
+    //現在のパスワードが正しいかを調べる
+    if(!(Hash::check($req->get('current-password'), Auth::user()->password))) {
+      return redirect()->back()->with('change_password_error', '現在のパスワードが間違っています！');
+    }
+
+    //現在のパスワードと新しいパスワードが違っているかを調べる
+    if(strcmp($req->get('current-password'), $req->get('new-password')) == 0) {
+      return redirect()->back()->with('change_password_error', '新しいパスワードが現在のパスワードと同じです！違うパスワードを設定してください！');
+    }
+
+    //パスワードのバリデーション。新しいパスワードは6文字以上、new-password_confirmationフィールドの値と一致しているかどうか。
+    $validated_data = $req->validate([
+      'current-password' => 'required',
+      'new-password' => 'required|string|min:6|confirmed',
+    ]);
+
+    //パスワードを変更
+    $user = Auth::user();
+    $user->password = bcrypt($req->get('new-password'));
+    $user->save();
+
+    return redirect()->back()->with('change_password_success', 'パスワードを変更しました！');
+  }
 }

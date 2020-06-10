@@ -96,7 +96,7 @@
                               </div>
 
                               <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                                  <label for="password-confirm" class="col-md-12 control-label">確認用パスワード</label>
+                                  <label for="password-confirm" class="col-md-12 control-label">パスワード(確認用)</label>
                                   <div class="col-md-12">
                                       <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
 

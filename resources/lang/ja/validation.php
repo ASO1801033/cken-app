@@ -30,7 +30,7 @@ return [
         'array'   => ':attributeは、:min個から:max個の間で指定してください！',
     ],
     'boolean'              => ':attributeは、trueかfalseを指定してください！',
-    'confirmed'            => ':attributeと確認用パスワードが一致していません！',
+    'confirmed'            => ':attributeとパスワード(確認用)が一致していません！',
     'date'                 => ':attributeには有効な日付を指定してください！',
     'date_format'          => ':attributeは:format形式で指定してください！',
     'different'            => ':attributeと:otherには、異なった内容を指定してください！',
@@ -145,11 +145,13 @@ return [
       'name' => 'ユーザー名',
       'email' => 'メールアドレス',
       'password' => 'パスワード',
-      'password_confirmation' => '確認用パスワード',
+      'password_confirmation' => 'パスワード(確認用)',
       'startdate' => '利用開始日',
       'starttime' => '利用開始時間',
       'finishdate' => '利用終了日',
       'finishtime' => '利用終了時間',
+      'new-password' => '新しいパスワード',
+      'new-password_confirmation' => '新しいパスワード(確認用)'
     ],
 
 ];

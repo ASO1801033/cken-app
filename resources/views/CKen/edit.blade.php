@@ -25,10 +25,19 @@ editnews<!DOCTYPE html>
             {{ Auth::user()->name }}
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-            <a href="{{ route('logout') }}"
-              onclick="event.preventDefault();
-              document.getElementById('logout-form').submit();" class="text-right">
+            <a class="nav-link text-dark" href="http://127.0.0.1:8000/cken/mypage">
+              <i class="fa fa-file-text-o" aria-hidden="true"></i> マイページ
+              <span class="sr-only">(current)</span>
+            </a>
+
+            <a class="nav-link text-dark" href="{{ route('password_update_in') }}">
+              <i class="fa fa-key" aria-hidden="true"></i> パスワード更新
+              <span class="sr-only">(current)</span>
+            </a>
+
+            <a class="nav-link text-dark" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
               <i class="fa fa-sign-out" aria-hidden="true"></i> ログアウト
+              <span class="sr-only">(current)</span>
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
               {{ csrf_field() }}
