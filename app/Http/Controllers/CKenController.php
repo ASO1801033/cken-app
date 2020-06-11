@@ -432,7 +432,7 @@ class CkenController extends Controller
     //パスワードのバリデーション。新しいパスワードは6文字以上、new-password_confirmationフィールドの値と一致しているかどうか。
     $validated_data = $req->validate([
       'current-password' => 'required',
-      'new-password' => 'required|string|min:6|confirmed',
+      'new-password' => 'required | string | min:6 | confirmed',
     ]);
 
     //パスワードを変更
