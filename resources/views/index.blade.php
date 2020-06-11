@@ -96,12 +96,14 @@
           <div class="carousel-item">
             <img class="d-block w-100" src="slide/img/dum03.png" alt="Third slide">
           </div>
+          <!--
           <div class="carousel-item">
             <img class="d-block w-100" src="slide/img/dum04.png" alt="Fourth slide">
           </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="slide/img/dum05.png" alt="Fifth slide">
           </div>
+          -->
         </div>
 
 
@@ -138,7 +140,7 @@
               <div class="row">
                 <div class="col-md-12 text-left">
                   <i class="fa fa-info-circle fa-2x" aria-hidden="true">
-                    おしらせ
+                    お知らせ
                   </i>
                 </div>
                 <div class="text-danger mt-2">
@@ -457,18 +459,21 @@
       <!-- Copyright -->
       <div class="footer-copyright text-center" style="background-color: #afeeee;">
         <div class="row mt-1">
-          <div class="col-4">
+          <!--<div class="col-4">-->
+          <div class="col-6">
             <a href="{{ route('index') }}">
               <i class="fa fa-home fa-2x text-dark" aria-hidden="true"></i><br>
               <b class="text-dark">トップ</b>
             </a>
           </div>
-          <div class="col-4">
+          <!--<div class="col-4">-->
+          <div class="col-6">
             <a href="http://127.0.0.1:8000/cken/mypage">
               <i class="fa fa-shopping-cart fa-2x text-dark" aria-hidden="true"></i><br>
               <b class="text-dark">お店</b>
             </a>
           </div>
+          <style>/*
           <div class="col-4">
             <!--<a href="http://127.0.0.1:8000/cken/mypage/coupon">-->
             <a href="#">
@@ -476,6 +481,7 @@
               <b class="text-dark">クーポン</b>
             </a>
           </div>
+          */</style>
         </div>
       </div>
       <!--/. Copyright -->

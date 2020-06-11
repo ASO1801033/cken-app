@@ -54,7 +54,7 @@
     <!-- コンテンツ(スクロールするとヘッダーの下に動く) -->
     <div class="container-fluid main">
 
-      <h2 class="text-center mb-3">パスワード再設定メール送信</h2>
+      <h2 class="text-center mb-3">パスワードリセットメール送信</h2>
 
       <div class="container">
           <div class="row">
@@ -89,7 +89,7 @@
                               <div class="form-group">
                                   <div class="col-md-12 text-center">
                                       <button type="submit" class="btn btn-primary btn-lg btn-block">
-                                          パスワード再設定メールを送信
+                                          パスワードリセットメールを送信
                                       </button>
                                   </div>
                               </div>

@@ -188,18 +188,21 @@
       <!-- Copyright -->
       <div class="footer-copyright text-center" style="background-color: #afeeee;">
         <div class="row mt-1">
-          <div class="col-4">
+          <!--<div class="col-4">-->
+          <div class="col-6">
             <a href="{{ route('index') }}">
               <i class="fa fa-home fa-2x text-dark" aria-hidden="true"></i><br>
               <b class="text-dark">トップ</b>
             </a>
           </div>
-          <div class="col-4">
+          <!--<div class="col-4">-->
+          <div class="col-6">
             <a href="http://127.0.0.1:8000/cken/mypage">
               <i class="fa fa-shopping-cart fa-2x text-dark" aria-hidden="true"></i><br>
               <b class="text-dark">お店</b>
             </a>
           </div>
+          <style>/*
           <div class="col-4">
             <!--<a href="http://127.0.0.1:8000/cken/mypage/coupon">-->
             <a href="#">
@@ -207,6 +210,7 @@
               <b class="text-dark">クーポン</b>
             </a>
           </div>
+          */</style>
         </div>
       </div>
       <!--/. Copyright -->
